@@ -1,0 +1,48 @@
+Documentation using R
+========================================================
+author: Ilaria Torre & Frank Loesche
+date: 2017-02-08
+autosize: true
+
+
+
+WYSIWYG vs Markup
+========================================================
+
+"What You See Is What You'll Get"
+
+## Workflow in WYSIWYS
+
+- write
+- select parts of text and apply format
+- visually check layout and structure
+
+## Workflow in Markup languages
+
+- describe document structure while writing
+
+
+Examples for WYSIWYG
+====================
+
+- LibreOffice / OpenOffice
+- Microsoft Word
+- Google Docs
+- Adobe Indesign (mostly)
+- 
+
+
+
+Slide With Code
+========================================================
+
+```{r}
+summary(cars)
+```
+
+Slide With Plot
+========================================================
+
+```{r, echo=FALSE}
+plot(cars)
+```
