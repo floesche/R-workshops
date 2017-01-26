@@ -1,3 +1,6 @@
+# Local changes
+examples/Out*
+
 # History files
 .Rhistory
 .Rapp.history

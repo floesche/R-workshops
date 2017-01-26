@@ -157,3 +157,19 @@ While 1990's WYSIWYG word processors thought it would be a good idea to use hidd
 ~~~
 
 *Not meant to be read by humans, but in the worst case you can.*
+
+Entrance: Pandoc
+================
+
+- written by John MacFarlane, a philosopher
+- *general markup converter*
+- also converts to output only formats (pdf, docx...)
+- eg
+  - from reST to LaTeX
+  - from Markdown to pdf
+  - from html to markdown
+- usage (try it inside `./examples/`)
+  - `pandoc --from html --to markdown Input.html --output Output.md`
+  - `pandoc --from markdown --to latex Input.md --output Output.pdf`
+  - `pandoc --from markdown --to docx Input.md --output Output.docx`
+  - `pandoc Input.md --output Output.pdf`
