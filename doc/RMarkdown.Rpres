@@ -143,6 +143,21 @@ The goal for the *lighweight Markup Languages* is to have text that is still **e
   - LibreOffice
 
 
+Markdown syntax
+===============
+
+* (skip YAML header for the moment)
+* Headers
+* List
+* Images
+* Tables
+* Embedded Latex syntax
+* Bibliography
+ 
+### Jabref example
+
+Show .doc and .pdf next to corresponding .md text
+
 BTW: WYSIWYG
 ============
 
@@ -159,7 +174,7 @@ While 1990's WYSIWYG word processors thought it would be a good idea to use hidd
 
 *Not meant to be read by humans, but in the worst case you can.*
 
-Entrance: Pandoc
+Pandoc
 ================
 
 - written by John MacFarlane, a philosopher
@@ -175,6 +190,21 @@ Entrance: Pandoc
   - `pandoc --from markdown --to latex Input.md --output Output.pdf`
   - `pandoc --from markdown --to docx Input.md --output Output.docx`
   - `pandoc Input.md --output Output.pdf`
+
+## Pandoc in text editor (YAML header)
+
+Example from paper:
+
+* title, author and date
+* bibliography file (where does it go?)
+* csl file (where does it go?)
+* Latex template from journal
+
+RMarkdown
+================
+
+* One additional step: knitr (tranforms description of R code into output)
+* Add code into paper
 
 
 Include processing output
