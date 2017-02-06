@@ -191,6 +191,24 @@ Pandoc
   - `pandoc --from markdown --to docx Input.md --output Output.docx`
   - `pandoc Input.md --output Output.pdf`
 
+
+Pandoc - additional features
+=============================
+
+- settings in YAML header
+  - title, author, date
+  - template
+  - bibliography formatting
+- extendable by *filters*
+
+## Workflow 
+
+1. you: edit Markdown file in text editor
+2. pandoc: Markdown -[filter]-> $\LaTeX$
+3. pdflatex: $\LaTeX$ -> pdf
+
+
+
 ## Pandoc in text editor (YAML header)
 
 Example from paper:
@@ -207,7 +225,18 @@ RMarkdown
 * Add code into paper
 
 
+
 Include processing output
 =========================
+
+Bibliography
+============
+
+- BibTeX
+    - references from all big publishers (Springer, Elsevier, Science...)
+    - export from Mendeley
+    - easy management in [JabRef](https://www.jabref.org/)
+
+
 
 
