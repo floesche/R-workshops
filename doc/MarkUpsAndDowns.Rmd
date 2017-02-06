@@ -1,13 +1,15 @@
-Documentation using R
-========================================================
-author: Ilaria Torre & Frank Loesche
-date: 2017-02-08
-autosize: true
+---
+title: "Raw Text to Camera-Ready"
+subtitle: "Mark Ups and Downs"
+author: 
+  - "Frank Loesche"
+  - "Ilaria Torre"
+date: "6 February 2017"
+output: beamer_presentation
+---
 
 
-
-WYSIWYG vs Markup
-========================================================
+#WYSIWYG vs Markup
 
 ## "What You See Is What You'll Get"
 
@@ -37,16 +39,15 @@ WYSIWYG vs Markup
 ### Examples
 
 - HTML
-- $\LaTeX$
+- LaTeX
 - Markdown
 
 
-1960's GML 
-==========
+# 1960's GML 
 
 Developed in 1960's to describe content of text documents for IBM's `SCRIPT` text formatter.
 
-```{GML}
+~~~
 :h1.Generalized Markup Language (GML)
 :p.Text can be marked as
 :ol.
@@ -54,12 +55,12 @@ Developed in 1960's to describe content of text documents for IBM's `SCRIPT` tex
 :li.paragraphs, and
 :li.lists.
 :eol.
-```
+~~~
 
 *GML is a procedural markup, not particlarly easy to read.*
 
-1970's TeX
-=============
+
+# 1970's TeX
 
 Developed in the late 1970's to typeset books.
 
@@ -77,15 +78,14 @@ Programming language that is specialised in digital typesets.
 In digital environments other markup languages such as `troff` and `groff` are used.
 
 
-1980's LaTeX
-============
+# 1980's LaTeX
 
-$\LaTeX$ (and ConTeXt) are content structuring markup languages uses $\TeX$ for type setting
+LaTeX (and ConTeXt) are content structuring markup languages uses TeX for type setting
 
 ~~~
 \section{LaTeX: Describe the document structure}
 
-This is some text, but \LaTeX contains many commands to structure content, but also to do direct formatting:
+This is some text, but LaTeX contains many commands to structure content, but also to do direct formatting:
 
 \begin{itemize}
   \item Markup elements for headings such as \chapter{} and \subsubsection{}
@@ -95,12 +95,11 @@ This is some text, but \LaTeX contains many commands to structure content, but a
 ~~~
 
 
-1980's SGML
-===========
+# 1980's SGML
 
 Standardized markup language. Subsets were used in HTML and XML.
 
-```{XML}
+~~~
 <section1>
   <h1>Standard Generalized Markup Language</h1>
   <p>Any kind of tags, with and without parameters, can be defined, including</p>
@@ -110,11 +109,10 @@ Standardized markup language. Subsets were used in HTML and XML.
     <li>inline text definitions.</li>
   </ol>
 </section1>
-```
+~~~
 
 
-2000's Lightweight Markup Languages 
-===================================
+# 2000's Lightweight Markup Languages
 
 BBCode, reStructuredText, AsciiDoc, Markdown
 
@@ -143,8 +141,7 @@ The goal for the *lighweight Markup Languages* is to have text that is still **e
   - LibreOffice
 
 
-Markdown syntax
-===============
+# Markdown syntax
 
 * (skip YAML header for the moment)
 * Headers
@@ -158,8 +155,8 @@ Markdown syntax
 
 Show .doc and .pdf next to corresponding .md text
 
-BTW: WYSIWYG
-============
+
+# BTW: WYSIWYG
 
 While 1990's WYSIWYG word processors thought it would be a good idea to use hidden binary (=non-readable) markup inside document formats such as `.doc`, they now internally use readable markup. Just rename a `.docx` file to `.zip`, open the archive and look at the file `./word/document.xml`:
 
@@ -174,8 +171,8 @@ While 1990's WYSIWYG word processors thought it would be a good idea to use hidd
 
 *Not meant to be read by humans, but in the worst case you can.*
 
-Pandoc
-================
+
+# Pandoc
 
 - written by John MacFarlane, a philosopher
 - *general markup converter*
@@ -192,8 +189,7 @@ Pandoc
   - `pandoc Input.md --output Output.pdf`
 
 
-Pandoc - additional features
-=============================
+# Pandoc - additional features
 
 - settings in YAML header
   - title, author, date
@@ -204,8 +200,8 @@ Pandoc - additional features
 ## Workflow 
 
 1. you: edit Markdown file in text editor
-2. pandoc: Markdown -[filter]-> $\LaTeX$
-3. pdflatex: $\LaTeX$ -> pdf
+2. pandoc: Markdown -[filter]-> LaTeX
+3. pdflatex: LaTeX -> pdf
 
 
 ## Pandoc in text editor (YAML header)
@@ -217,25 +213,20 @@ Example from paper:
 * csl file (where does it go?)
 * Latex template from journal
 
-RMarkdown
-================
+
+# RMarkdown
 
 * One additional step: knitr (tranforms description of R code into output)
 * Add code into paper
 
 
 
-Include processing output
-=========================
+# Include processing output
 
-Bibliography
-============
+
+# Bibliography
 
 - BibTeX
     - references from all big publishers (Springer, Elsevier, Science...)
     - export from Mendeley
     - easy management in [JabRef](https://www.jabref.org/)
-
-
-
-
