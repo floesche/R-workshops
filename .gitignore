@@ -1,6 +1,7 @@
 # Local changes
 examples/Out*
 doc/RMarkdown.md
+doc/Structure.pdf
 
 # History files
 .Rhistory

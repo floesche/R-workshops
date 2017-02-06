@@ -208,7 +208,6 @@ Pandoc - additional features
 3. pdflatex: $\LaTeX$ -> pdf
 
 
-
 ## Pandoc in text editor (YAML header)
 
 Example from paper:
