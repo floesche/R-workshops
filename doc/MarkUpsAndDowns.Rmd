@@ -12,9 +12,8 @@ output: beamer_presentation
 knitr::opts_chunk$set(echo = FALSE, dev = 'pdf', width = 40, breaklines = T, tidy.opts=list(width.cutoff=40))
 ```
 
-
+[//]: # (Ilaria's "Everyone knows M$ Word")
 #WYSIWYG vs Markup
-[//]: # (Ilaria)
 
 ## "What You See Is What You'll Get"
 
@@ -48,8 +47,11 @@ knitr::opts_chunk$set(echo = FALSE, dev = 'pdf', width = 40, breaklines = T, tid
 - Markdown
 
 
-# 1960's GML 
+***
+
 [//]: # (Frank's "before markdown")
+# 1960's GML 
+
 
 Developed in 1960's to describe content of text documents for IBM's `SCRIPT` text formatter.
 
@@ -65,24 +67,7 @@ Developed in 1960's to describe content of text documents for IBM's `SCRIPT` tex
 
 *GML is a procedural markup, not particlarly easy to read.*
 
-
-# 1970's TeX
-
-Developed in the late 1970's to typeset books.
-
-
-~~~
-\font\xmplbx = cmbx10 scaled \magstephalf
-\leftline{\xmplbx \TeX: typesetting system}
-\vglue .5\baselineskip
-Programming language that is specialised in digital typesets.
-\item{1.} Particular good for mathematical formulas,
-\item{2.} allows macro definition
-\bye
-~~~
-
-In digital environments other markup languages such as `troff` and `groff` are used.
-
+***
 
 # 1980's LaTeX
 
@@ -91,15 +76,21 @@ LaTeX (and ConTeXt) are content structuring markup languages uses TeX for type s
 ~~~
 \section{LaTeX: Describe the document structure}
 
-This is some text, but LaTeX contains many commands to structure content, but also to do direct formatting:
+In LaTeX content can be structured, but also
+directly formatted:
 
 \begin{itemize}
-  \item Markup elements for headings such as \chapter{} and \subsubsection{}
-  \item inline-markup, eg to \emph{emphasize} certain parts
-  \item direct font manipulations such as \Large\textit{asd}
+  \item Markup elements for headings such 
+    as \chapter{} and \subsubsection{}
+  \item inline-markup, eg to \emph{emphasize} 
+    certain parts
+  \item direct font manipulations 
+    such as \Large\textit{asd}
 \end{itemize}
 ~~~
 
+
+***
 
 # 1980's SGML
 
@@ -108,7 +99,8 @@ Standardized markup language. Subsets were used in HTML and XML.
 ~~~
 <section1>
   <h1>Standard Generalized Markup Language</h1>
-  <p>Any kind of tags, with and without parameters, can be defined, including</p>
+  <p>Any kind of tags, with and without parameters, 
+  can be defined, including</p>
   <ol>
     <li>sections,</li>
     <li>text block definitions, and</li>
@@ -117,29 +109,27 @@ Standardized markup language. Subsets were used in HTML and XML.
 </section1>
 ~~~
 
+***
 
 # 2000's Lightweight Markup Languages
 
-BBCode, reStructuredText, AsciiDoc, Markdown
+- ML are "expensive to write"
+- ML difficult to learn
+- Lightweight ML: 
+    - easy to learn
+    - intuitive to read
+    - history in forum, wiki, chat, sourcecode documentation
+- examples
+    - BBCode "[`[url=http://bbcode.org]Website[/url]`](http://www.bbcode.org/)"
+    - reStructuredText "[`.. _rst: docutils[...]`](http://docutils.sourceforge.net/rst.html)"
+    - AsciiDoc "[`asciidoc.org/[website]`](http://asciidoc.org/)"
+    - Markdown "[`[website](daringfireball.net/[...])`](http://daringfireball.net/projects/markdown/)"
 
-# BTW: WYSIWYG
 
-While 1990's WYSIWYG word processors thought it would be a good idea to use hidden binary (=non-readable) markup inside document formats such as `.doc`, they now internally use readable markup. Just rename a `.docx` file to `.zip`, open the archive and look at the file `./word/document.xml`:
 
-~~~
-<w:r>
-  <w:t xml:space="preserve">This is </w:t>
-</w:r>
-<w:r>
-  <w:rPr><w:i/><w:iCs/></w:rPr><w:t>italic</w:t>
-</w:r>
-~~~
-
-*Not meant to be read by humans, but in the worst case you can.*
-
-***
-
+[//]: # (Ilaria's "markdown")
 # Markdown
+
 
 The goal for the *lighweight Markup Languages* is to have text that is still **easy to read**, but that can be transformed to different outputs, for example:
 
@@ -162,30 +152,47 @@ It can be written in any text editor!
 * tables
 
 
+[//]: # (Frank's "pandoc")
 # Pandoc
 
-- written by John MacFarlane, a philosopher
+
+- written by John MacFarlane (philosopher)
 - *general markup converter*
 - converts document structure, not layout
 - also converts to output only formats (pdf, docx...)
 - eg
-  - from reST to LaTeX
-  - from Markdown to pdf
-  - from html to markdown
+    - from rST to LaTeX
+    - from Markdown to pdf
+    - from html to markdown
 - usage (try it inside `./examples/` directory)
-  - `pandoc --from html --to markdown Input.html --output Output.md`
-  - `pandoc --from markdown --to latex Input.md --output Output.pdf`
-  - `pandoc --from markdown --to docx Input.md --output Output.docx`
-  - `pandoc Input.md --output Output.pdf`
+    - `pandoc --from html --to markdown Input.html --output Output.md`
+    - `pandoc --from markdown --to latex Input.md --output Output.pdf`
+    - `pandoc --from markdown --to docx Input.md --output Output.docx`
+    - `pandoc Input.md --output Output.pdf`
 
 
 # Pandoc - additional features
 
-- settings in YAML header
-  - title, author, date
-  - template
-  - bibliography formatting
 - extendable by *filters*
+- settings in YAML^[Yet Another Markup Language (really!)] header
+    - title, author, date
+    - template
+    - bibliography formatting
+    
+~~~
+---
+title: Mark ups and downs
+author:
+- Ilaria Torre
+- Frank Loesche
+tags: markup, markdown, talk
+bibliography: examples/MyBibliography.bib
+---
+~~~
+
+
+
+***
 
 ## Workflow 
 
@@ -194,8 +201,11 @@ It can be written in any text editor!
 3. pdflatex: LaTeX -> pdf
 
 
+** filter
 
+[//]: # (Ilaria's "bibliography")
 # Bibliography
+
 
 - BibTeX
     - references from all big publishers (Springer, Elsevier, Science...)
@@ -203,7 +213,9 @@ It can be written in any text editor!
     - easy management in [JabRef](https://www.jabref.org/)
     
 
+[//]: # (Frank's "bib in pandoc")
 # Bibliography setup in text file
+
 
 
 * bibliography file path
@@ -213,20 +225,19 @@ It can be written in any text editor!
 
 ***
 
-# RMarkdown
+[//]: # (Frank's "Rmarkdown Notebook")
+# RMarkdown Notebook
 
-We said that you can write Markdown documents in any text editor. This includes RStudio!
+- Literate Programming
+- mix code and text
+- compiler creates output format
 
-```{r, echo = T}
-# install.packages("rmarkdown")
-```
 
-TODO: are rmarkdown and knitr included by default in new RStudio?
 
-* One additional step: knitr (tranforms description of R code into output)
-* Add code into paper
 
+[//]: # (Ilaria's "camera ready")
 # RMarkdown example
+
 
 Don't know if there is time?
 TODO: prepare script, or use built in when new -> RMarkdown?
@@ -245,10 +256,32 @@ The "quick'n'dirty" way:
 
 [^1]: Note: you will probably need to change some of the parameters in the journal template before it works out. Here Google will be your best friend!
 
+[//]: # (Frank's "template")
 # From "raw" text to beautiful pdf option 2
 
 The "hardcore" way:
-    
+
+[//]: # (Frank's "Sweave")
+
+
+[//]: # (Ilaria's "any text editor")
+
+We said that you can write Markdown documents in any text editor. This includes RStudio!
+
+```{r, echo = T}
+# install.packages("rmarkdown")
+```
+
+TODO: are rmarkdown and knitr included by default in new RStudio?
+
+* One additional step: knitr (tranforms description of R code into output)
+* Add code into paper
+
+
+[//]: # (Frank's "Why bother?")
+
+
+[//]: # (both)
 # Links
 
 * Markdown syntax: https://daringfireball.net/projects/markdown/syntax
@@ -256,3 +289,43 @@ The "hardcore" way:
 * RMarkdown documentation: http://rmarkdown.rstudio.com/lesson-1.html, https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
 * BibTex reference: www.bibtex.org/
 * Jabref: http://www.jabref.org/
+
+
+***
+
+# Backup
+
+# 1970's TeX
+
+Developed in the late 1970's to typeset books.
+
+
+~~~
+\font\xmplbx = cmbx10 scaled \magstephalf
+\leftline{\xmplbx \TeX: typesetting system}
+\vglue .5\baselineskip
+Programming language that is 
+specialised in digital typesets.
+\item{1.} Particular good for mathematical formulas,
+\item{2.} allows macro definition
+\bye
+~~~
+
+- `troff` / `groff` ...
+
+# BTW: WYSIWYG
+
+While 1990's WYSIWYG word processors thought it would be a good idea to use hidden binary (=non-readable) markup inside document formats such as `.doc`, they now internally use readable markup. Just rename a `.docx` file to `.zip`, open the archive and look at the file `./word/document.xml`:
+
+~~~
+<w:r>
+  <w:t xml:space="preserve">This is </w:t>
+</w:r>
+<w:r>
+  <w:rPr><w:i/><w:iCs/></w:rPr><w:t>italic</w:t>
+</w:r>
+~~~
+
+*Not meant to be read by humans, but in the worst case you can.*
+
+***
