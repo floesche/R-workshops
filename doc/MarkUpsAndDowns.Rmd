@@ -226,7 +226,7 @@ TODO: are rmarkdown and knitr included by default in new RStudio?
 # RMarkdown example
 
 Don't know if there is time?
-TODO: prepare script
+TODO: prepare script, or use built in when new -> RMarkdown?
 
 # Include processing output
 
