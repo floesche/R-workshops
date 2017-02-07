@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = FALSE, dev = 'pdf', width = 40, breaklines = T, tid
 ```
 
 [//]: # (Ilaria's "Everyone knows M$ Word")
-# WYSIWYG vs Markup
+#WYSIWYG vs Markup
 
 ## "What You See Is What You'll Get"
 
@@ -26,10 +26,9 @@ knitr::opts_chunk$set(echo = FALSE, dev = 'pdf', width = 40, breaklines = T, tid
 ### Examples
 
 - LibreOffice / OpenOffice
-- Microsoft Word 
+- Microsoft Word
 - Google Docs
 - Adobe Indesign (mostly)
-
 
 ***
 
@@ -153,9 +152,26 @@ It can be written in any text editor!
 * tables
 
 
+***
 [//]: # (Frank's "pandoc")
-# Pandoc
+# Workflow 
 
+1. you: 
+    - edit Markdown file in text editor
+    - save file
+    - tell pandoc generate a pdf
+2. pandoc: 
+    - read Markdown -[filter]-> LaTeX
+    - start pdflatex
+3. pdflatex: 
+    - read LaTeX -> pdf
+4. you:
+    - look at pdf file 
+
+
+***
+
+# Pandoc
 
 - written by John MacFarlane (philosopher)
 - *general markup converter*
@@ -171,6 +187,7 @@ It can be written in any text editor!
     - `pandoc --from markdown --to docx Input.md --output Output.docx`
     - `pandoc Input.md --output Output.pdf`
 
+***
 
 # Pandoc - additional features
 
@@ -193,16 +210,6 @@ bibliography: examples/MyBibliography.bib
 
 
 
-***
-
-## Workflow 
-
-1. you: edit Markdown file in text editor
-2. pandoc: Markdown -[filter]-> LaTeX
-3. pdflatex: LaTeX -> pdf
-
-
-** filter
 
 [//]: # (Ilaria's "bibliography")
 # Bibliography
@@ -212,17 +219,63 @@ bibliography: examples/MyBibliography.bib
     - references from all big publishers (Springer, Elsevier, Science...)
     - export from Mendeley
     - easy management in [JabRef](https://www.jabref.org/)
-    
+
     
 [//]: # (Frank's "bib in pandoc")
 # Bibliography setup in text file
 
 
+- bibliography in same path 
+    - [examples/MyBibliography.bib](../examples/MyBibliography.bib)
+- add YAML header
+    - see examples at [examples/ReferenceTest.Rmd](../examples/ReferenceTest.Rmd)
 
-* bibliography file path
-* csl files: https://github.com/citation-style-language/styles
-* csl file path
-* internal: filter pandoc-citeproc
+~~~
+---
+...
+bibliography: MyBibliography.bib
+---
+~~~
+
+![citation](img/cite01.png)
+
+
+***
+
+# Change Reference style
+
+- download required style in Citation Style Language (CSL)
+- more than 8000 at <http://citationstyles.org> + [https://github.com/citation-style-language...](https://github.com/citation-style-language/styles-distribution)
+
+## APA
+
+~~~
+...
+bibliography: MyBibliography.bib
+csl: apa.csl
+---
+~~~
+
+![citation](img/cite02.png)
+
+***
+
+- internal: filter pandoc-citeproc
+- `bibliography` and `csl` are configured through YAML
+
+## IEEE
+
+~~~
+...
+bibliography: MyBibliography.bib
+csl: ieee.csl
+---
+~~~
+
+![citation](img/cite03.png)
+
+
+
 
 ***
 
@@ -232,6 +285,7 @@ bibliography: examples/MyBibliography.bib
 - Literate Programming
 - mix code and text
 - compiler creates output format
+- code blocks can run separately (fast turnaround)
 
 
 
@@ -329,4 +383,3 @@ While 1990's WYSIWYG word processors thought it would be a good idea to use hidd
 
 *Not meant to be read by humans, but in the worst case you can.*
 
-***
