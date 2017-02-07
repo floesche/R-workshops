@@ -152,9 +152,26 @@ It can be written in any text editor!
 * tables
 
 
+***
 [//]: # (Frank's "pandoc")
-# Pandoc
+# Workflow 
 
+1. you: 
+    - edit Markdown file in text editor
+    - save file
+    - tell pandoc generate a pdf^[or docx, html, rst, html, ...]
+2. pandoc: 
+    - read Markdown -[filter]-> LaTeX
+    - start pdflatex
+3. pdflatex: 
+    - read LaTeX -> pdf
+4. you:
+    - look at pdf file 
+
+
+***
+
+# Pandoc
 
 - written by John MacFarlane (philosopher)
 - *general markup converter*
@@ -170,6 +187,7 @@ It can be written in any text editor!
     - `pandoc --from markdown --to docx Input.md --output Output.docx`
     - `pandoc Input.md --output Output.pdf`
 
+***
 
 # Pandoc - additional features
 
@@ -192,16 +210,6 @@ bibliography: examples/MyBibliography.bib
 
 
 
-***
-
-## Workflow 
-
-1. you: edit Markdown file in text editor
-2. pandoc: Markdown -[filter]-> LaTeX
-3. pdflatex: LaTeX -> pdf
-
-
-** filter
 
 [//]: # (Ilaria's "bibliography")
 # Bibliography
@@ -211,12 +219,10 @@ bibliography: examples/MyBibliography.bib
     - references from all big publishers (Springer, Elsevier, Science...)
     - export from Mendeley
     - easy management in [JabRef](https://www.jabref.org/)
-    
+
     
 [//]: # (Frank's "bib in pandoc")
 # Bibliography setup in text file
-
-
 
 * bibliography file path
 * csl files: https://github.com/citation-style-language/styles
