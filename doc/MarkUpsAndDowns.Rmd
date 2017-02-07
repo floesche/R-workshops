@@ -221,6 +221,10 @@ bibliography: examples/MyBibliography.bib
     - references from all big publishers (Springer, Elsevier, Science...)
     - export from Mendeley
     - easy management in [JabRef](https://www.jabref.org/)
+    
+# References in MD file
+
+See example References.MD
 
     
 [//]: # (Frank's "bib in pandoc")
