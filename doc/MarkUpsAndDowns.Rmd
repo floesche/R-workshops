@@ -233,17 +233,18 @@ TODO: prepare script
 
 # From "raw" text to beautiful pdf option 1
 
-The "quick'n'dirty" option:
+The "quick'n'dirty" way:
 
-1 Download LaTex template from journal
-2 Export text to .tex
-3 Copy all .tex document and paste into template[^1]
-4 Compile pdf document in perfect format
+1. Download LaTex template from journal
+2. Export text to .tex
+3. Copy all .tex document and paste into template[^1]
+4. Compile pdf document in perfect format
 
-[^1]: You will probably need to change some of the parameters in the template
+[^1]: Note: you will probably need to change some of the parameters in the journal template before it works out. Here Google will be your best friend!
 
 # From "raw" text to beautiful pdf option 2
 
+The "hardcore" way:
     
 # Links
 
