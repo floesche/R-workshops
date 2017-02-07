@@ -157,11 +157,6 @@ It can be written in any text editor!
 * links
 * images
 * tables
- 
-
-
-
-
 
 
 # Pandoc
@@ -196,14 +191,6 @@ It can be written in any text editor!
 3. pdflatex: LaTeX -> pdf
 
 
-## Pandoc in text editor (YAML header)
-
-Example from paper:
-
-* title, author and date
-* bibliography file (where does it go?)
-* csl file (where does it go?)
-* Latex template from journal
 
 # Bibliography
 
@@ -211,6 +198,15 @@ Example from paper:
     - references from all big publishers (Springer, Elsevier, Science...)
     - export from Mendeley
     - easy management in [JabRef](https://www.jabref.org/)
+    
+
+# Bibliography setup in text file
+
+
+* bibliography file path
+* csl files: https://github.com/citation-style-language/styles
+* csl file path
+* internal: filter pandoc-citeproc
 
 # RMarkdown
 
