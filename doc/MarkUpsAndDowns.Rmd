@@ -8,6 +8,9 @@ date: "6 February 2017"
 output: beamer_presentation
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, dev = 'pdf', width = 40, breaklines = T, tidy.opts=list(width.cutoff=40))
+```
 
 #WYSIWYG vs Markup
 
@@ -116,46 +119,6 @@ Standardized markup language. Subsets were used in HTML and XML.
 
 BBCode, reStructuredText, AsciiDoc, Markdown
 
-~~~~~~~~~
-# Markdown
-
-The goal for the *lighweight Markup Languages* is to have text that is still **easy to read**, but that can be transformed to different outputs, for example:
-
-- PDF
-- HTML
-- WYSIWYG documents
-  - Word
-  - LibreOffice
-~~~~~~~~~
-
-*** 
-
-# Markdown
-
-The goal for the *lighweight Markup Languages* is to have text that is still **easy to read**, but that can be transformed to different outputs, for example:
-
-- PDF
-- HTML
-- WYSIWYG documents
-  - Word
-  - LibreOffice
-
-
-# Markdown syntax
-
-* (skip YAML header for the moment)
-* Headers
-* List
-* Images
-* Tables
-* Embedded Latex syntax
-* Bibliography
- 
-### Jabref example
-
-Show .doc and .pdf next to corresponding .md text
-
-
 # BTW: WYSIWYG
 
 While 1990's WYSIWYG word processors thought it would be a good idea to use hidden binary (=non-readable) markup inside document formats such as `.doc`, they now internally use readable markup. Just rename a `.docx` file to `.zip`, open the archive and look at the file `./word/document.xml`:
@@ -170,6 +133,30 @@ While 1990's WYSIWYG word processors thought it would be a good idea to use hidd
 ~~~
 
 *Not meant to be read by humans, but in the worst case you can.*
+
+***
+
+# Markdown
+
+The goal for the *lighweight Markup Languages* is to have text that is still **easy to read**, but that can be transformed to different outputs, for example:
+
+- PDF
+- HTML
+- WYSIWYG documents:
+    - Word
+    - LibreOffice
+    
+It can be written in any text editor!
+
+
+# Markdown syntax
+
+* headers
+* emphasis (**bold**, *italics*)
+* lists
+* links
+* images
+* tables
 
 
 # Pandoc
@@ -204,27 +191,6 @@ While 1990's WYSIWYG word processors thought it would be a good idea to use hidd
 3. pdflatex: LaTeX -> pdf
 
 
-## Pandoc in text editor (YAML header)
-
-Example from paper:
-
-* title, author and date
-* bibliography file (where does it go?)
-* csl file (where does it go?)
-* Latex template from journal
-
-
-# RMarkdown
-
-
-
-* One additional step: knitr (tranforms description of R code into output)
-* Add code into paper
-
-
-
-# Include processing output
-
 
 # Bibliography
 
@@ -232,3 +198,58 @@ Example from paper:
     - references from all big publishers (Springer, Elsevier, Science...)
     - export from Mendeley
     - easy management in [JabRef](https://www.jabref.org/)
+    
+
+# Bibliography setup in text file
+
+
+* bibliography file path
+* csl files: https://github.com/citation-style-language/styles
+* csl file path
+* internal: filter pandoc-citeproc
+
+***
+
+# RMarkdown
+
+We said that you can write Markdown documents in any text editor. This includes RStudio!
+
+```{r, echo = T}
+# install.packages("rmarkdown")
+```
+
+TODO: are rmarkdown and knitr included by default in new RStudio?
+
+* One additional step: knitr (tranforms description of R code into output)
+* Add code into paper
+
+# RMarkdown example
+
+Don't know if there is time?
+TODO: prepare script, or use built in when new -> RMarkdown?
+
+# Include processing output
+
+
+# From "raw" text to beautiful pdf option 1
+
+The "quick'n'dirty" way:
+
+1. Download LaTex template from journal
+2. Export text to .tex
+3. Copy all .tex document and paste into template[^1]
+4. Compile pdf document in perfect format
+
+[^1]: Note: you will probably need to change some of the parameters in the journal template before it works out. Here Google will be your best friend!
+
+# From "raw" text to beautiful pdf option 2
+
+The "hardcore" way:
+    
+# Links
+
+* Markdown syntax: https://daringfireball.net/projects/markdown/syntax
+* Pandoc documentation: http://pandoc.org/MANUAL.html
+* RMarkdown documentation: http://rmarkdown.rstudio.com/lesson-1.html, https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
+* BibTex reference: www.bibtex.org/
+* Jabref: http://www.jabref.org/
