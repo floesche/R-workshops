@@ -1,0 +1,232 @@
+---
+title: "Raw Text to Camera-Ready"
+subtitle: "Mark Ups and Downs"
+author: 
+  - "Frank Loesche"
+  - "Ilaria Torre"
+date: "6 February 2017"
+output: beamer_presentation
+---
+
+
+#WYSIWYG vs Markup
+
+## "What You See Is What You'll Get"
+
+### Workflow
+
+- write
+- select parts of text and apply format
+- visually check layout and structure
+
+### Examples
+
+- LibreOffice / OpenOffice
+- Microsoft Word
+- Google Docs
+- Adobe Indesign (mostly)
+
+***
+
+## Annotated text
+
+### Workflow
+
+- write text with annotations
+- check syntax
+- check visual
+
+### Examples
+
+- HTML
+- LaTeX
+- Markdown
+
+
+# 1960's GML 
+
+Developed in 1960's to describe content of text documents for IBM's `SCRIPT` text formatter.
+
+~~~
+:h1.Generalized Markup Language (GML)
+:p.Text can be marked as
+:ol.
+:li.headings,
+:li.paragraphs, and
+:li.lists.
+:eol.
+~~~
+
+*GML is a procedural markup, not particlarly easy to read.*
+
+
+# 1970's TeX
+
+Developed in the late 1970's to typeset books.
+
+
+~~~
+\font\xmplbx = cmbx10 scaled \magstephalf
+\leftline{\xmplbx \TeX: typesetting system}
+\vglue .5\baselineskip
+Programming language that is specialised in digital typesets.
+\item{1.} Particular good for mathematical formulas,
+\item{2.} allows macro definition
+\bye
+~~~
+
+In digital environments other markup languages such as `troff` and `groff` are used.
+
+
+# 1980's LaTeX
+
+LaTeX (and ConTeXt) are content structuring markup languages uses TeX for type setting
+
+~~~
+\section{LaTeX: Describe the document structure}
+
+This is some text, but LaTeX contains many commands to structure content, but also to do direct formatting:
+
+\begin{itemize}
+  \item Markup elements for headings such as \chapter{} and \subsubsection{}
+  \item inline-markup, eg to \emph{emphasize} certain parts
+  \item direct font manipulations such as \Large\textit{asd}
+\end{itemize}
+~~~
+
+
+# 1980's SGML
+
+Standardized markup language. Subsets were used in HTML and XML.
+
+~~~
+<section1>
+  <h1>Standard Generalized Markup Language</h1>
+  <p>Any kind of tags, with and without parameters, can be defined, including</p>
+  <ol>
+    <li>sections,</li>
+    <li>text block definitions, and</li>
+    <li>inline text definitions.</li>
+  </ol>
+</section1>
+~~~
+
+
+# 2000's Lightweight Markup Languages
+
+BBCode, reStructuredText, AsciiDoc, Markdown
+
+~~~~~~~~~
+# Markdown
+
+The goal for the *lighweight Markup Languages* is to have text that is still **easy to read**, but that can be transformed to different outputs, for example:
+
+- PDF
+- HTML
+- WYSIWYG documents
+  - Word
+  - LibreOffice
+~~~~~~~~~
+
+*** 
+
+# Markdown
+
+The goal for the *lighweight Markup Languages* is to have text that is still **easy to read**, but that can be transformed to different outputs, for example:
+
+- PDF
+- HTML
+- WYSIWYG documents
+  - Word
+  - LibreOffice
+
+
+# Markdown syntax
+
+* (skip YAML header for the moment)
+* Headers
+* List
+* Images
+* Tables
+* Embedded Latex syntax
+* Bibliography
+ 
+### Jabref example
+
+Show .doc and .pdf next to corresponding .md text
+
+
+# BTW: WYSIWYG
+
+While 1990's WYSIWYG word processors thought it would be a good idea to use hidden binary (=non-readable) markup inside document formats such as `.doc`, they now internally use readable markup. Just rename a `.docx` file to `.zip`, open the archive and look at the file `./word/document.xml`:
+
+~~~
+<w:r>
+  <w:t xml:space="preserve">This is </w:t>
+</w:r>
+<w:r>
+  <w:rPr><w:i/><w:iCs/></w:rPr><w:t>italic</w:t>
+</w:r>
+~~~
+
+*Not meant to be read by humans, but in the worst case you can.*
+
+
+# Pandoc
+
+- written by John MacFarlane, a philosopher
+- *general markup converter*
+- converts document structure, not layout
+- also converts to output only formats (pdf, docx...)
+- eg
+  - from reST to LaTeX
+  - from Markdown to pdf
+  - from html to markdown
+- usage (try it inside `./examples/` directory)
+  - `pandoc --from html --to markdown Input.html --output Output.md`
+  - `pandoc --from markdown --to latex Input.md --output Output.pdf`
+  - `pandoc --from markdown --to docx Input.md --output Output.docx`
+  - `pandoc Input.md --output Output.pdf`
+
+
+# Pandoc - additional features
+
+- settings in YAML header
+  - title, author, date
+  - template
+  - bibliography formatting
+- extendable by *filters*
+
+## Workflow 
+
+1. you: edit Markdown file in text editor
+2. pandoc: Markdown -[filter]-> LaTeX
+3. pdflatex: LaTeX -> pdf
+
+
+## Pandoc in text editor (YAML header)
+
+Example from paper:
+
+* title, author and date
+* bibliography file (where does it go?)
+* csl file (where does it go?)
+* Latex template from journal
+
+
+# RMarkdown
+
+* One additional step: knitr (tranforms description of R code into output)
+* Add code into paper
+
+
+
+# Include processing output
+
+
+# Bibliography
+
+- BibTeX
+    - references from all big publishers (Springer, Elsevier, Science...)
+    - export from Mendeley
+    - easy management in [JabRef](https://www.jabref.org/)
