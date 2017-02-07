@@ -24,7 +24,7 @@ subtitle: Structure for the talk
 - markdown [I]
     - in any text editor
     - we use rstudio
-    - syntax: headers, bold, italics, lists, links, images
+    - syntax: headers, bold, italics, lists, links, images, tables
     - example
 - pandoc [F]
     - whats happening internally?
