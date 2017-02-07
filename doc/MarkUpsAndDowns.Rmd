@@ -136,12 +136,12 @@ It can be written in any text editor!
 
 # Markdown syntax
 
-* Headers
-* List
-* Images
-* Tables
-* Embedded Latex syntax
-* Bibliography
+* headers
+* emphasis (**bold**, *italics*)
+* lists
+* links
+* images
+* tables
  
 ### Jabref example
 
