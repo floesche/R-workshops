@@ -130,11 +130,12 @@ The goal for the *lighweight Markup Languages* is to have text that is still **e
 - WYSIWYG documents:
     - Word
     - LibreOffice
+    
+It can be written in any text editor!
 
 
 # Markdown syntax
 
-* (skip YAML header for the moment)
 * Headers
 * List
 * Images
@@ -207,7 +208,7 @@ Example from paper:
 
 # RMarkdown
 
-
+We said that you can write Markdown documents in any text editor. This includes RStudio!
 
 * One additional step: knitr (tranforms description of R code into output)
 * Add code into paper
