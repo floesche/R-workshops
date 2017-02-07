@@ -223,3 +223,11 @@ Example from paper:
     - references from all big publishers (Springer, Elsevier, Science...)
     - export from Mendeley
     - easy management in [JabRef](https://www.jabref.org/)
+    
+# Links
+
+* Markdown syntax: https://daringfireball.net/projects/markdown/syntax
+* Pandoc documentation: http://pandoc.org/MANUAL.html
+* RMarkdown documentation: http://rmarkdown.rstudio.com/lesson-1.html
+* BibTex reference: www.bibtex.org/
+* Jabref: http://www.jabref.org/
