@@ -383,4 +383,3 @@ While 1990's WYSIWYG word processors thought it would be a good idea to use hidd
 
 *Not meant to be read by humans, but in the worst case you can.*
 
-***
