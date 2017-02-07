@@ -15,4 +15,37 @@
   keywords = {Impasse, Conversation, Creative Problem Solving, Conversation Analysis},
 }
 
+@InProceedings{Lafferty2001,
+  author    = {Lafferty, John and McCallum, Andrew and Pereira, Fernando and others},
+  title     = {Conditional random fields: Probabilistic models for segmenting and labeling sequence data},
+  booktitle = {Proceedings of the eighteenth international conference on machine learning, ICML},
+  year      = {2001},
+  volume    = {1},
+  pages     = {282--289},
+}
+
+@Article{Navon1977,
+  author  = {David Navon},
+  title   = {Forest before trees: The precedence of global features in visual perception},
+  journal = {Cognitive Psychology},
+  year    = {1977},
+  volume  = {9},
+  number  = {3},
+  pages   = {353 - 383},
+  doi     = {http://dx.doi.org/10.1016/0010-0285(77)90012-3},
+  issn    = {0010-0285},
+  url     = {//www.sciencedirect.com/science/article/pii/0010028577900123},
+}
+
+@Article{Navon1984,
+  author    = {Navon, David},
+  title     = {Resources—A theoretical soup stone?},
+  journal   = {Psychological review},
+  year      = {1984},
+  volume    = {91},
+  number    = {2},
+  pages     = {216},
+  publisher = {American Psychological Association},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
