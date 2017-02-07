@@ -12,7 +12,9 @@ output: beamer_presentation
 knitr::opts_chunk$set(echo = FALSE, dev = 'pdf', width = 40, breaklines = T, tidy.opts=list(width.cutoff=40))
 ```
 
+
 #WYSIWYG vs Markup
+[//]: # (Ilaria)
 
 ## "What You See Is What You'll Get"
 
@@ -47,6 +49,7 @@ knitr::opts_chunk$set(echo = FALSE, dev = 'pdf', width = 40, breaklines = T, tid
 
 
 # 1960's GML 
+[//]: # (Frank's "before markdown")
 
 Developed in 1960's to describe content of text documents for IBM's `SCRIPT` text formatter.
 
