@@ -17,6 +17,7 @@ subtitle: Structure for the talk
     - click button on top to highlight
     - otherwise: specify text structure in text
     - mostly: markdown - very simple syntax
+    - worth mentioning that you can track changes within your computer if your paper is in text document?
 - before markdown [F]
     - introduction into ML
     
