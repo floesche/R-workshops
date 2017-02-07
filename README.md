@@ -20,7 +20,11 @@ These files are for the *Coding Lunch*.
 - [Markdown syntax](https://daringfireball.net/projects/markdown/syntax)
 - [RMarkdown documentation](http://rmarkdown.rstudio.com/lesson-1.html)
 - [RMarkdown reference](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
+
 - [BibTex reference](http://www.bibtex.org)
+- [Citation Styles (CSL)](http://citationstyles.org/)
+- [CSL download](https://github.com/citation-style-language/styles-distribution)
+
 
 - [Pandoc manual](http://pandoc.org/MANUAL.html)
 - [knitr](https://yihui.name/knitr/)

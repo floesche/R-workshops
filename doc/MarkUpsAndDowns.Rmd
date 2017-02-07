@@ -159,7 +159,7 @@ It can be written in any text editor!
 1. you: 
     - edit Markdown file in text editor
     - save file
-    - tell pandoc generate a pdf^[or docx, html, rst, html, ...]
+    - tell pandoc generate a pdf
 2. pandoc: 
     - read Markdown -[filter]-> LaTeX
     - start pdflatex
@@ -225,7 +225,7 @@ bibliography: examples/MyBibliography.bib
 # Bibliography setup in text file
 
 * bibliography file path
-* csl files: https://github.com/citation-style-language/styles
+* csl files: https://github.com/citation-style-language/styles-distribution
 * csl file path
 * internal: filter pandoc-citeproc
 

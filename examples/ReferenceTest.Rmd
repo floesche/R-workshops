@@ -1,0 +1,16 @@
+---
+title: "Adding references"
+author: "Frank Loesche"
+date: "8 February 2017"
+output:
+  pdf_document: 
+    number_sections: yes
+    toc: yes
+bibliography: MyBibliography.bib
+---
+
+# Heading
+
+This is a citation of @Torre2016.
+
+# References {-}
