@@ -212,7 +212,7 @@ bibliography: examples/MyBibliography.bib
     - export from Mendeley
     - easy management in [JabRef](https://www.jabref.org/)
     
-
+  
 [//]: # (Frank's "bib in pandoc")
 # Bibliography setup in text file
 
