@@ -26,9 +26,10 @@ knitr::opts_chunk$set(echo = FALSE, dev = 'pdf', width = 40, breaklines = T, tid
 ### Examples
 
 - LibreOffice / OpenOffice
-- Microsoft Word
+- Microsoft Word 
 - Google Docs
 - Adobe Indesign (mostly)
+
 
 ***
 
