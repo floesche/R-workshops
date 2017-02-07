@@ -144,6 +144,8 @@ It can be written in any text editor!
 
 # Markdown syntax
 
+See example BasicMDSyntax.md and relative outputs in .pdf and .doc
+
 * headers
 * emphasis (**bold**, *italics*)
 * lists
