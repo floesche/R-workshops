@@ -8,6 +8,9 @@ date: "6 February 2017"
 output: beamer_presentation
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, dev = 'pdf', width = 40, breaklines = T, tidy.opts=list(width.cutoff=40))
+```
 
 #WYSIWYG vs Markup
 
@@ -116,19 +119,7 @@ Standardized markup language. Subsets were used in HTML and XML.
 
 BBCode, reStructuredText, AsciiDoc, Markdown
 
-~~~~~~~~~
-# Markdown
-
-The goal for the *lighweight Markup Languages* is to have text that is still **easy to read**, but that can be transformed to different outputs, for example:
-
-- PDF
-- HTML
-- WYSIWYG documents
-  - Word
-  - LibreOffice
-~~~~~~~~~
-
-*** 
+***
 
 # Markdown
 
@@ -136,9 +127,9 @@ The goal for the *lighweight Markup Languages* is to have text that is still **e
 
 - PDF
 - HTML
-- WYSIWYG documents
-  - Word
-  - LibreOffice
+- WYSIWYG documents:
+    - Word
+    - LibreOffice
 
 
 # Markdown syntax
