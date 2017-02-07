@@ -119,6 +119,21 @@ Standardized markup language. Subsets were used in HTML and XML.
 
 BBCode, reStructuredText, AsciiDoc, Markdown
 
+# BTW: WYSIWYG
+
+While 1990's WYSIWYG word processors thought it would be a good idea to use hidden binary (=non-readable) markup inside document formats such as `.doc`, they now internally use readable markup. Just rename a `.docx` file to `.zip`, open the archive and look at the file `./word/document.xml`:
+
+~~~
+<w:r>
+  <w:t xml:space="preserve">This is </w:t>
+</w:r>
+<w:r>
+  <w:rPr><w:i/><w:iCs/></w:rPr><w:t>italic</w:t>
+</w:r>
+~~~
+
+*Not meant to be read by humans, but in the worst case you can.*
+
 ***
 
 # Markdown
@@ -146,20 +161,7 @@ It can be written in any text editor!
 
 
 
-# BTW: WYSIWYG
 
-While 1990's WYSIWYG word processors thought it would be a good idea to use hidden binary (=non-readable) markup inside document formats such as `.doc`, they now internally use readable markup. Just rename a `.docx` file to `.zip`, open the archive and look at the file `./word/document.xml`:
-
-~~~
-<w:r>
-  <w:t xml:space="preserve">This is </w:t>
-</w:r>
-<w:r>
-  <w:rPr><w:i/><w:iCs/></w:rPr><w:t>italic</w:t>
-</w:r>
-~~~
-
-*Not meant to be read by humans, but in the worst case you can.*
 
 
 # Pandoc
