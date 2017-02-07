@@ -216,6 +216,8 @@ Example from paper:
 
 # RMarkdown
 
+
+
 * One additional step: knitr (tranforms description of R code into output)
 * Add code into paper
 
