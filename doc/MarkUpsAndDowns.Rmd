@@ -143,9 +143,7 @@ It can be written in any text editor!
 * images
 * tables
  
-### Jabref example
 
-Show .doc and .pdf next to corresponding .md text
 
 
 # BTW: WYSIWYG
@@ -205,6 +203,12 @@ Example from paper:
 * csl file (where does it go?)
 * Latex template from journal
 
+# Bibliography
+
+- BibTeX
+    - references from all big publishers (Springer, Elsevier, Science...)
+    - export from Mendeley
+    - easy management in [JabRef](https://www.jabref.org/)
 
 # RMarkdown
 
@@ -218,12 +222,8 @@ We said that you can write Markdown documents in any text editor. This includes 
 # Include processing output
 
 
-# Bibliography
 
-- BibTeX
-    - references from all big publishers (Springer, Elsevier, Science...)
-    - export from Mendeley
-    - easy management in [JabRef](https://www.jabref.org/)
+
     
 # Links
 
