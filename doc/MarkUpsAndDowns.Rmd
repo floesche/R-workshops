@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = FALSE, dev = 'pdf', width = 40, breaklines = T, tid
 ```
 
 [//]: # (Ilaria's "Everyone knows M$ Word")
-#WYSIWYG vs Markup
+# WYSIWYG vs Markup
 
 ## "What You See Is What You'll Get"
 
