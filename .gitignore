@@ -1,5 +1,6 @@
 # Local changes
 examples/Out*
+examples/*pdf
 doc/*pdf
 
 # History files
