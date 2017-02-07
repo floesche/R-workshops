@@ -208,14 +208,25 @@ It can be written in any text editor!
 * csl file path
 * internal: filter pandoc-citeproc
 
+***
+
 # RMarkdown
 
 We said that you can write Markdown documents in any text editor. This includes RStudio!
 
+```{r, echo = T}
+# install.packages("rmarkdown")
+```
+
+TODO: are rmarkdown and knitr included by default in new RStudio?
+
 * One additional step: knitr (tranforms description of R code into output)
 * Add code into paper
 
+# RMarkdown example
 
+Don't know if there is time?
+TODO: prepare script
 
 # Include processing output
 
@@ -227,6 +238,6 @@ We said that you can write Markdown documents in any text editor. This includes 
 
 * Markdown syntax: https://daringfireball.net/projects/markdown/syntax
 * Pandoc documentation: http://pandoc.org/MANUAL.html
-* RMarkdown documentation: http://rmarkdown.rstudio.com/lesson-1.html
+* RMarkdown documentation: http://rmarkdown.rstudio.com/lesson-1.html, https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
 * BibTex reference: www.bibtex.org/
 * Jabref: http://www.jabref.org/
