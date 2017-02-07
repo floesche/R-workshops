@@ -7,10 +7,12 @@ output:
     number_sections: yes
     toc: yes
 bibliography: MyBibliography.bib
+# csl: apa.csl
+# csl: ieee.csl
 ---
 
 # Heading
 
-This is a citation of @Torre2016.
+This is a citation of [@Torre2016].
 
 # References {-}

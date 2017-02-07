@@ -224,10 +224,58 @@ bibliography: examples/MyBibliography.bib
 [//]: # (Frank's "bib in pandoc")
 # Bibliography setup in text file
 
-* bibliography file path
-* csl files: https://github.com/citation-style-language/styles-distribution
-* csl file path
-* internal: filter pandoc-citeproc
+
+- bibliography in same path 
+    - [examples/MyBibliography.bib](../examples/MyBibliography.bib)
+- add YAML header
+    - see examples at [examples/ReferenceTest.Rmd](../examples/ReferenceTest.Rmd)
+
+~~~
+---
+...
+bibliography: MyBibliography.bib
+---
+~~~
+
+![citation](img/cite01.png)
+
+
+***
+
+# Change Reference style
+
+- download required style in Citation Style Language (CSL)
+- more than 8000 at <http://citationstyles.org> + [https://github.com/citation-style-language...](https://github.com/citation-style-language/styles-distribution)
+
+## APA
+
+~~~
+...
+bibliography: MyBibliography.bib
+csl: apa.csl
+---
+~~~
+
+![citation](img/cite02.png)
+
+***
+
+- internal: filter pandoc-citeproc
+- `bibliography` and `csl` are configured through YAML
+
+## IEEE
+
+~~~
+...
+bibliography: MyBibliography.bib
+csl: ieee.csl
+---
+~~~
+
+![citation](img/cite03.png)
+
+
+
 
 ***
 
@@ -237,6 +285,7 @@ bibliography: examples/MyBibliography.bib
 - Literate Programming
 - mix code and text
 - compiler creates output format
+- code blocks can run separately (fast turnaround)
 
 
 
