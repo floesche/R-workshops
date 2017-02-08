@@ -3,6 +3,17 @@
 These files are for the *Coding Lunch* on 8 February 2017. You can download everything [in a zip file](https://github.com/floesche/R-workshops/archive/master.zip), or clone this repository.
 
 
+## TODO
+
+- upload pres pdf [F]
+- double check files [I]
+- add links to Literate Programming [F]
+- Links to Sweave [F]
+- Add example Makefile [F]
+- update examples/README.md [I]
+- create doc/README.md [I]
+- send email with link [I]
+
 ## Presentation
 
 - Out talk is in [doc/MarkUpsAndDowns.pdf](doc/MarkUpsAndDowns.pdf)
