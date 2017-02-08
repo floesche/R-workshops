@@ -13,7 +13,7 @@ You can click Knit -> Knit to PDF, and you will see that two files will be creat
 
 Next, you can open the tex file that has just been created (FinalMD.tex) in your LaTex editor, together with the template that you downloaded from the journal. In our example, we use the template from the INTERSPEECH conference series, which is located in the folder: examples/IS2016_paper_kit/LaTeX.
 
-In that folder, I have already created a modified template, where I basically copied the content of FinalMD.tex (starting from Header 1) and pasted it within the `\begin{document}... \end{document}`.
+In that folder, I have already created a modified template, where I basically copied the content of FinalMD.tex and pasted it within the `\begin{document}... \end{document}`.
 
 I had to change a few things before I could compile correctly, though:
 
