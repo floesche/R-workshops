@@ -1,7 +1,17 @@
 # Local changes
 examples/Out*
 examples/*pdf
+examples/*bak
+
 doc/*pdf
+
+*bbl
+*aux
+*blg
+*out
+*synctex.gz
+*log
+
 
 # History files
 .Rhistory
