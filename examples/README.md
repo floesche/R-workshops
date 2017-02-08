@@ -3,7 +3,7 @@
 This directory contains examples and helper files.
 
 
-***.csl**: Citation Style Languge files are used to format references.
+**.csl**: Citation Style Languge files are used to format references.
 
 
 **apa-simple.template**: example template to demonstrate how to fill a LaTeX template with content from Markdown and RMarkdown. This is the easiest approach only filling the content from Markdown, demonstrated on an APA template.
