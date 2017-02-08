@@ -1,35 +1,32 @@
-%%
-%% This is file `./samples/shortsample.tex',
-%% generated with the docstrip utility.
-%%
-%% The original source files were:
-%%
-%% apa6.dtx  (with options: `shortsample')
-%% ----------------------------------------------------------------------
-%% 
-%% apa6 - A LaTeX class for formatting documents in compliance with the
-%% American Psychological Association's Publication Manual, 6th edition
-%% 
-%% Copyright (C) 2011-2016 by Brian D. Beitzel <brian at beitzel.com>
-%% 
-%% This work may be distributed and/or modified under the
-%% conditions of the LaTeX Project Public License (LPPL), either
-%% version 1.3c of this license or (at your option) any later
-%% version.  The latest version of this license is in the file:
-%% 
-%% http://www.latex-project.org/lppl.txt
-%% 
-%% Users may freely modify these files without permission, as long as the
-%% copyright line and this statement are maintained intact.
-%% 
-%% This work is not endorsed by, affiliated with, or probably even known
-%% by, the American Psychological Association.
-%% 
-%% ----------------------------------------------------------------------
-%% 
 \documentclass[jou]{apa6}
 
 \usepackage[american]{babel}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copied from pandoc's latex.default
+
+%% for compact lists
+\providecommand{\tightlist}{%
+\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+%% links
+\usepackage[unicode=true]{hyperref}
+
+%% if markdown has graphics, then resize them to the width of te column.
+$if(graphics)$
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+$endif$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \usepackage{csquotes}
 \usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
@@ -38,17 +35,14 @@
 
 \title{Sample APA-Style Document Using the \textsf{apa6} Package}
 
-\author{Brian D. Beitzel}
-\affiliation{SUNY Oneonta}
+\author{Frank Loesche}
+\affiliation{CogNovo | Plymouth University}
 
-\leftheader{Beitzel}
+\leftheader{Loesche}
 
-\abstract{This demonstration paper uses the \textsf{apa6} \LaTeX\
-  class to format the document in compliance with the 6th Edition of
-  the American Psychological Assocation's \textit{Publication Manual.}
-  The references are managed using \textsf{biblatex}.}
+\abstract{This template uses the header from \texttt{apa-simple.template} and only adds the \texttt{body} output from Markdown. This template can therefore only be used for one output (paper), you need to edit it for every output separately. But on the upside, this one change is much easier to hand. Have a look at apa.template instead, if you are looking for a more complete way (or for the R-package rticles, see links in README.md)}
 
-\keywords{APA style, demonstration}
+\keywords{example template, hack}
 
 \begin{document}
 \maketitle
