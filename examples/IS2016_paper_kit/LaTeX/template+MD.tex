@@ -9,16 +9,37 @@
 \def\vec#1{\ensuremath{\bm{{#1}}}}
 \def\mat#1{\vec{#1}}
 
-% I had to add the following commands: a pandoc command which was causing problems when using \tightlist (solution found here: https://github.com/jgm/pandoc-templates/blob/master/default.latex); this command is also found in the LaTex output created by RStudio.
+% Ilaria: I had to add the following commands: a pandoc command which was causing problems when using \tightlist (solution found here: https://github.com/jgm/pandoc-templates/blob/master/default.latex); this command is also found in the LaTex output created by RStudio.
 \providecommand{\tightlist}{% 
 \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-% and two packages:
+% and five packages:
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage{longtable}
 \usepackage{booktabs}
 \usepackage{supertabular}
 
+% Ilaria: The original pandoc output uses \longtable to generate the table from Markdown; in order to correctly generate it in this template, I had to add the following code (found in http://tex.stackexchange.com/questions/161431/how-to-solve-longtable-is-not-in-1-column-mode-error)
+\makeatletter
+\let\oldlt\longtable
+\let\endoldlt\endlongtable
+\def\longtable{\@ifnextchar[\longtable@i \longtable@ii}
+\def\longtable@i[#1]{\begin{figure}[t]
+\onecolumn
+\begin{minipage}{0.5\textwidth}
+\oldlt[#1]
+}
+\def\longtable@ii{\begin{figure}[t]
+\onecolumn
+\begin{minipage}{0.5\textwidth}
+\oldlt
+}
+\def\endlongtable{\endoldlt
+\end{minipage}
+\twocolumn
+\end{figure}}
+\makeatother
+% End of longtable addition
 
 \sloppy % better line breaks
 \ninept
@@ -128,14 +149,42 @@
   \bottomrule
   \end{longtable}
   
+ 
+ \subsection{R Markdown}\label{r-markdown}
+ 
+ This is an R Markdown document. Markdown is a simple formatting syntax
+ for authoring HTML, PDF, and MS Word documents. For more details on
+ using R Markdown see \url{http://rmarkdown.rstudio.com}.
+ 
+ When you click the \textbf{Knit} button a document will be generated
+ that includes both content as well as the output of any embedded R code
+ chunks within the document. You can embed an R code chunk like this:
   
+%this is the output from pandoc, but we can eliminate these lines (I will just comment them out)    
+%    \begin{Shaded}
+%    \begin{Highlighting}[]
+%    \KeywordTok{summary}\NormalTok{(cars)}
+%    \end{Highlighting}
+%    \end{Shaded}
     
+    \begin{verbatim}
+    ##      speed           dist       
+    ##  Min.   : 4.0   Min.   :  2.00  
+    ##  1st Qu.:12.0   1st Qu.: 26.00  
+    ##  Median :15.0   Median : 36.00  
+    ##  Mean   :15.4   Mean   : 42.98  
+    ##  3rd Qu.:19.0   3rd Qu.: 56.00  
+    ##  Max.   :25.0   Max.   :120.00
+    \end{verbatim}
     
-  \newpage
-  \eightpt
-  \bibliographystyle{IEEEtran}
+  %\newpage 
+  %\eightpt
+  %\bibliographystyle{IEEEtran}
 
-  \bibliography{mybib}
+  %\bibliography{MyBibliography.bib} %you can add your bibliography here; change this to the name of your bibliography file
+  
+  
+  
 
 %  \begin{thebibliography}{9}
 %    \bibitem[1]{Davis80-COP}

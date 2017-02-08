@@ -2,6 +2,12 @@
 examples/Out*
 examples/*pdf
 examples/*bak
+examples/FinalMD_files/*
+examples/FinalMD_files/*
+
+examples/IS2016_paper_kit/LaTeX/FinalMD_files/*
+
+.DS_Store
 
 doc/*pdf
 
