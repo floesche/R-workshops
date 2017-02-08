@@ -10,11 +10,10 @@ Things we have to do before sending out the link to everyone.
 
 - [x] upload pres pdf [F]
 - [ ] Abstract for WHAT's UP website [I]
-- [ ] Update simple-apa and example Article [F]
+- [x] Update simple-apa and example Article [F]
 - [ ] double check files [I]
 - [x] add links to Literate Programming [F]
 - [x] Links to Sweave [F]
-- [ ] Add example Makefile [F]
 - [ ] update examples/README.md [I]
 - [ ] create doc/README.md [I]
 - [ ] remove this ToDo list and send email with link [I]
