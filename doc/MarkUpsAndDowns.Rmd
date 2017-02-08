@@ -332,6 +332,8 @@ The "quick'n'dirty" way:
 3. Copy all .tex document and paste into template[^1]
 4. Compile pdf document in perfect format
 
+See: FinalMD.rmd
+
 [^1]: Note: you will probably need to change some of the parameters in the journal template before it works out. Here Google will be your best friend!
 
 [//]: # (Frank's "template")
