@@ -1,3 +1,9 @@
+---
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
 # Header 1
 
 This is some very basic text.
@@ -16,6 +22,12 @@ Unordered lists are created with symbols like *, -, +... but the first item of t
 + I also like languages
 - and I like folk music
     - especially Blackbeard's Tea Party!
+    
+Ordered lists are created with numbers and dots. Even if you mess up the numbering, MD will fix it for you:
+
+1. Item 1
+2. Item 2
+2. Item 3
     
 Links can be added in text like this: [click here](http://www.blackbeardsteaparty.com/) or like this: <http://www.blackbeardsteaparty.com/>
 

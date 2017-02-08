@@ -28,7 +28,7 @@ subtitle: Structure for the talk
     - example
 - pandoc [F]
     - whats happening internally?
-    - pandoc is translater
+    - pandoc is translator
     - examples...
 - more paper like [F]
     - metadata: YAML
