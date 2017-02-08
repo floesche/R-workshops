@@ -14,6 +14,7 @@ Things we have to do before sending out the link to everyone.
 - [ ] double check files [I]
 - [x] add links to Literate Programming [F]
 - [x] Links to Sweave [F]
+- [x] Added example for table from dataframe using knitr/kabel [F]
 - [ ] update examples/README.md [I]
 - [ ] create doc/README.md [I]
 - [ ] remove this ToDo list and send email with link [I]
