@@ -3,8 +3,8 @@ title: "References options in Markdown"
 author: "Ilaria Torre"
 date: "8 February 2017"
 output:
-  word_document: default
   pdf_document: null
+  word_document: default
 bibliography: MyBibliography.bib
 ---
 

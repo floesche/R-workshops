@@ -1,8 +1,8 @@
 ---
 output:
-  word_document: default
   pdf_document: default
   html_document: default
+  word_document: default
 ---
 # Header 1
 
