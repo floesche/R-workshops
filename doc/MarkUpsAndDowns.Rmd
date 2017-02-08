@@ -303,18 +303,6 @@ See example: BasicRMD.rmd
 - code blocks can run separately (fast turnaround)
 
 
-
-
-[//]: # (Ilaria's "camera ready")
-# RMarkdown example
-
-
-Don't know if there is time?
-TODO: prepare script, or use built in when new -> RMarkdown?
-
-# Include processing output
-
-
 # From "raw" text to beautiful pdf option 1
 
 The "quick'n'dirty" way:
@@ -335,17 +323,6 @@ The "hardcore" way:
 
 
 [//]: # (Ilaria's "any text editor")
-
-We said that you can write Markdown documents in any text editor. This includes RStudio!
-
-```{r, echo = T}
-# install.packages("rmarkdown")
-```
-
-TODO: are rmarkdown and knitr included by default in new RStudio?
-
-* One additional step: knitr (tranforms description of R code into output)
-* Add code into paper
 
 
 [//]: # (Frank's "Why bother?")
