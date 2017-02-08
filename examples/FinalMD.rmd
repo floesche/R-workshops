@@ -2,7 +2,8 @@
 title: "FinalMD"
 author: "Ilaria Torre"
 date: "8 February 2017"
-output: 
+output:
+  word_document: default
   pdf_document:
     keep_tex: yes
 ---
