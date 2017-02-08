@@ -1,5 +1,9 @@
 * text eol=crlf
 
 *.Rmd text
+*.md text
+*.bib text
+*.Rnw text
 
 *.png binary
+*.pdf binary
