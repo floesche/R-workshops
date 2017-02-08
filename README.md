@@ -39,4 +39,5 @@ These files are for the *Coding Lunch* on 8 February 2017. You can download ever
 - [Pandoc manual](http://pandoc.org/MANUAL.html)
 - [knitr](https://yihui.name/knitr/)
     - [knitr examples](https://github.com/yihui/knitr-examples)
+    - [knitr options](https://yihui.name/knitr/options/)
 - [Jabref](http://www.jabref.org/)

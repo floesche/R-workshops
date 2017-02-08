@@ -12,7 +12,6 @@ output: beamer_presentation
 knitr::opts_chunk$set(echo = FALSE, dev = 'pdf', width = 40, breaklines = T, tidy.opts=list(width.cutoff=40))
 ```
 
-[//]: # (Ilaria's "Everyone knows M$ Word")
 #WYSIWYG vs Markup
 
 ## "What You See Is What You'll Get"
@@ -49,7 +48,6 @@ knitr::opts_chunk$set(echo = FALSE, dev = 'pdf', width = 40, breaklines = T, tid
 
 ***
 
-[//]: # (Frank's "before markdown")
 # 1960's GML 
 
 
@@ -126,10 +124,7 @@ Standardized markup language. Subsets were used in HTML and XML.
     - Markdown "[`[website](daringfireball.net/[...])`](http://daringfireball.net/projects/markdown/)"
 
 
-
-[//]: # (Ilaria's "markdown")
 # Markdown
-
 
 The goal of *lighweight Markup Languages* is to have text that is still **easy to read**, but that can be transformed to different outputs, for example:
 
@@ -155,7 +150,7 @@ See example BasicMDSyntax.md and relative outputs in .pdf and .doc
 
 
 ***
-[//]: # (Frank's "pandoc")
+
 # Workflow 
 
 1. you: 
@@ -219,9 +214,6 @@ bibliography: examples/MyBibliography.bib
 ~~~
 
 
-
-
-[//]: # (Ilaria's "bibliography")
 # Bibliography
 
 
@@ -235,7 +227,6 @@ bibliography: examples/MyBibliography.bib
 See example References.MD
 
     
-[//]: # (Frank's "bib in pandoc")
 # Bibliography setup in text file
 
 
@@ -292,7 +283,7 @@ csl: ieee.csl
 
 
 ***
-[//]: # (Ilaria's "what is RMarkdown")
+
 # RMarkdown
 
 Markdown vs. RMarkdown
@@ -303,7 +294,7 @@ Markdown vs. RMarkdown
 See example: BasicRMD.rmd
 
 ***
-[//]: # (Frank's "Rmarkdown Notebook")
+
 # RMarkdown Notebook
 
 - Literate Programming
@@ -314,8 +305,6 @@ See example: BasicRMD.rmd
 ![R code chunk and it's replacement](img/code2plot.png)
 
 ***
-
-[//]: # (Ilaria's "camera ready")
 
 # From "raw" text to beautiful pdf
 
@@ -330,7 +319,6 @@ See: FinalMD.rmd
 
 [^1]: Note: you will probably need to change some of the parameters in the journal template before it works out. Here Google will be your best friend!
 
-[//]: # (Frank's "template")
 # "Hack" template
 
 1. download template from publisher (eg [APA](http://www.ctan.org/tex-archive/macros/latex/contrib/apa6/samples))
@@ -371,8 +359,6 @@ see [example/apa.template](../example/apa.template) and [example/exampleArticle.
 
 ***
 
-[//]: # (Frank's "Sweave")
-
 # Sweave
 
 - Literate Programming for LaTeX
@@ -391,11 +377,7 @@ Here comes more LaTeX
 ~~~
 
 
-
-[//]: # (Ilaria's "any text editor")
-
-
-[//]: # (Frank's "Why bother?")
+***
 
 # Why bother?
 
@@ -412,15 +394,9 @@ Here comes more LaTeX
     - figures in same document
     - no copy&paste errors
 
-[//]: # (both)
 # Links
 
-* Markdown syntax: https://daringfireball.net/projects/markdown/syntax
-* Pandoc documentation: http://pandoc.org/MANUAL.html
-* RMarkdown documentation: http://rmarkdown.rstudio.com/lesson-1.html, https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
-* BibTex reference: www.bibtex.org/
-* Jabref: http://www.jabref.org/
-* Knitr options: https://yihui.name/knitr/options/
+The most recent links are in the [README.md](../README.md).
 
 
 ***
