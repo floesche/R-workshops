@@ -12,7 +12,6 @@ output: beamer_presentation
 knitr::opts_chunk$set(echo = FALSE, dev = 'pdf', width = 40, breaklines = T, tidy.opts=list(width.cutoff=40))
 ```
 
-[//]: # (Ilaria's "Everyone knows M$ Word")
 #WYSIWYG vs Markup
 
 ## "What You See Is What You'll Get"
@@ -49,7 +48,6 @@ knitr::opts_chunk$set(echo = FALSE, dev = 'pdf', width = 40, breaklines = T, tid
 
 ***
 
-[//]: # (Frank's "before markdown")
 # 1960's GML 
 
 
@@ -126,10 +124,7 @@ Standardized markup language. Subsets were used in HTML and XML.
     - Markdown "[`[website](daringfireball.net/[...])`](http://daringfireball.net/projects/markdown/)"
 
 
-
-[//]: # (Ilaria's "markdown")
 # Markdown
-
 
 The goal of *lighweight Markup Languages* is to have text that is still **easy to read**, but that can be transformed to different outputs, for example:
 
@@ -144,7 +139,7 @@ It can be written in any text editor!
 
 # Markdown syntax
 
-See example BasicMDSyntax.md and relative outputs in .pdf and .doc
+See [`examples/BasicMDSyntax.md`](../examples/BasicMDSyntax.md) and relative outputs in [`.pdf`](../examples/BasicMDSyntax.pdf) and [`.docx`](../examples/BasicMDSyntax.docx).
 
 * headers
 * emphasis (**bold**, *italics*)
@@ -155,7 +150,7 @@ See example BasicMDSyntax.md and relative outputs in .pdf and .doc
 
 
 ***
-[//]: # (Frank's "pandoc")
+
 # Workflow 
 
 1. you: 
@@ -189,7 +184,7 @@ See example BasicMDSyntax.md and relative outputs in .pdf and .doc
     - from rST to LaTeX
     - from Markdown to pdf
     - from html to markdown
-- usage (try it inside `./examples/` directory)
+- usage (try it inside [`./examples/`](../examples/) directory^[open terminal, change directory to [`./examples/`](../examples/), run commands in terminal])
     - `pandoc Input.md --output Output.pdf`
     
     - `pandoc --from html --to markdown Input.html --output Output.md`
@@ -218,10 +213,8 @@ bibliography: examples/MyBibliography.bib
 ---
 ~~~
 
+***
 
-
-
-[//]: # (Ilaria's "bibliography")
 # Bibliography
 
 
@@ -229,20 +222,22 @@ bibliography: examples/MyBibliography.bib
     - references from all big publishers (Springer, Elsevier, Science...) + Scholar
     - export from Mendeley
     - easy management in [JabRef](https://www.jabref.org/)
-    
+
+*** 
+
 # References in MD file
 
-See example References.MD
+See [`examples/References.md`](../examples/References.md)
 
-    
-[//]: # (Frank's "bib in pandoc")
+***
+
 # Bibliography setup in text file
 
 
 - bibliography in same path 
-    - [examples/MyBibliography.bib](../examples/MyBibliography.bib)
+    - [`examples/MyBibliography.bib`](../examples/MyBibliography.bib)
 - add YAML header
-    - see examples at [examples/ReferenceTest.Rmd](../examples/ReferenceTest.Rmd)
+    - see examples at [`examples/ReferenceTest.Rmd`](../examples/ReferenceTest.Rmd)
 
 ~~~
 ---
@@ -252,7 +247,6 @@ bibliography: MyBibliography.bib
 ~~~
 
 ![citation](img/cite1.png)
-
 
 ***
 
@@ -292,7 +286,7 @@ csl: ieee.csl
 
 
 ***
-[//]: # (Ilaria's "what is RMarkdown")
+
 # RMarkdown
 
 Markdown vs. RMarkdown
@@ -300,10 +294,10 @@ Markdown vs. RMarkdown
 - another layer to the flow: knitr
 - Rmd --{R(knitr)}--> Markdown --{pandoc}--> ...
 
-See example: BasicRMD.rmd
+See [`examples/BasicRMD.rmd`](../examples/BasicRMD.rmd)
 
 ***
-[//]: # (Frank's "Rmarkdown Notebook")
+
 # RMarkdown Notebook
 
 - Literate Programming
@@ -314,8 +308,6 @@ See example: BasicRMD.rmd
 ![R code chunk and it's replacement](img/code2plot.png)
 
 ***
-
-[//]: # (Ilaria's "camera ready")
 
 # From "raw" text to beautiful pdf
 
@@ -330,7 +322,6 @@ See: FinalMD.rmd
 
 [^1]: Note: you will probably need to change some of the parameters in the journal template before it works out. Here Google will be your best friend!
 
-[//]: # (Frank's "template")
 # "Hack" template
 
 1. download template from publisher (eg [APA](http://www.ctan.org/tex-archive/macros/latex/contrib/apa6/samples))
@@ -346,7 +337,7 @@ output:
 ---
 ~~~
 
-see [example/apa-simple.template](../example/apa-simple.template) and [example/exampleArticle.Rmd](../example/exampleArticle.Rmd)
+see [`examples/apa-simple.template`](../examples/apa-simple.template) and [`examples/exampleArticle.Rmd`](../examples/exampleArticle.Rmd)
 
 ***
 
@@ -367,11 +358,9 @@ $if(keywords)$
 $endif$
 ~~~
 
-see [example/apa.template](../example/apa.template) and [example/exampleArticle.Rmd](../example/exampleArticle.Rmd)
+see [`examples/apa.template`](../examples/apa.template) and [`examples/exampleArticle.Rmd`](../examples/exampleArticle.Rmd)
 
 ***
-
-[//]: # (Frank's "Sweave")
 
 # Sweave
 
@@ -391,11 +380,7 @@ Here comes more LaTeX
 ~~~
 
 
-
-[//]: # (Ilaria's "any text editor")
-
-
-[//]: # (Frank's "Why bother?")
+***
 
 # Why bother?
 
@@ -408,29 +393,27 @@ Here comes more LaTeX
     - only text files
     - no clash between Word 2016, Word 2003, OpenOffice...
 - literate programming
+    - reproducible research (replicability crisis)
     - (quantitative) data analysis and description in one document
     - figures in same document
     - no copy&paste errors
 
-[//]: # (both)
+***
+
 # Links
 
-* Markdown syntax: https://daringfireball.net/projects/markdown/syntax
-* Pandoc documentation: http://pandoc.org/MANUAL.html
-* RMarkdown documentation: http://rmarkdown.rstudio.com/lesson-1.html, https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
-* BibTex reference: www.bibtex.org/
-* Jabref: http://www.jabref.org/
-* Knitr options: https://yihui.name/knitr/options/
+The most recent links are in the [README.md](../README.md).
 
 
 ***
 
 # Backup
 
-# 1970's TeX
+***
+
+## 1970's TeX
 
 Developed in the late 1970's to typeset books.
-
 
 ~~~
 \font\xmplbx = cmbx10 scaled \magstephalf
@@ -443,9 +426,11 @@ specialised in digital typesets.
 \bye
 ~~~
 
-- `troff` / `groff` ...
+- `troff` / `groff` are other examples for Markup Languages
 
-# BTW: WYSIWYG
+***
+
+## BTW: WYSIWYG
 
 While 1990's WYSIWYG word processors thought it would be a good idea to use hidden binary (=non-readable) markup inside document formats such as `.doc`, they now internally use readable markup. Just rename a `.docx` file to `.zip`, open the archive and look at the file `./word/document.xml`:
 
