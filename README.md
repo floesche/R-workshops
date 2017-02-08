@@ -11,7 +11,7 @@ Things we have to do before sending out the link to everyone.
 - [x] upload pres pdf [F]
 - [ ] Abstract for WHAT's UP website [I]
 - [x] Update simple-apa and example Article [F]
-- [ ] double check files [I]
+- [x] double check files [I]
 - [x] add links to Literate Programming [F]
 - [x] Links to Sweave [F]
 - [x] Added example for table from dataframe using knitr/kabel [F]

@@ -2,7 +2,9 @@
 title: "Basic RMarkdown options"
 author: "Ilaria Torre"
 date: "8 February 2017"
-output: pdf_document
+output:
+  word_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
