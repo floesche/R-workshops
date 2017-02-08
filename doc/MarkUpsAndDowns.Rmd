@@ -284,6 +284,15 @@ csl: ieee.csl
 
 
 ***
+[//]: # (Ilaria's "what is RMarkdown")
+# RMarkdown
+
+Markdown vs RMarkdown
+
+- another layer to the flow: knitr
+- R(knitr) -> Markdown -> pandoc -> ...
+
+See example: BasicRMD.rmd
 
 [//]: # (Frank's "Rmarkdown Notebook")
 # RMarkdown Notebook
