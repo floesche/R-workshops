@@ -162,12 +162,10 @@ See example BasicMDSyntax.md and relative outputs in .pdf and .doc
     - edit Markdown file in text editor
     - save file
     - tell pandoc to generate a pdf
-2. pandoc: 
-    - reads Markdown -[filter]-> LaTeX
-    - starts pdflatex
-3. pdflatex: 
-    - reads LaTeX -> pdf
-4. you:
+2. computer: 
+    - Markdown --[pandoc(filter)]--> LaTeX
+    - LaTeX --[pdflatex]--> pdf
+3. you:
     - look at pdf file 
 
 
@@ -300,7 +298,7 @@ csl: ieee.csl
 Markdown vs. RMarkdown
 
 - another layer to the flow: knitr
-- R(knitr) -> Markdown -> pandoc -> ...
+- Rmd --[R(knitr)]--> Markdown --[pandoc]--> ...
 
 See example: BasicRMD.rmd
 
@@ -379,12 +377,44 @@ see [example/apa.template](../example/apa.template) and [example/exampleArticle.
 
 [//]: # (Frank's "Sweave")
 
+# Sweave
+
+- Literate Programming for LaTeX
+- Workflow:
+    - Rnw --[R(knitr)]--> LaTeX
+    - LaTeX --[pdflatex]--> pdf
+
+~~~
+\section{Nomal LaTex document}
+
+<<plot, echo=FALSE, warning=FALSE>>=
+print( ggplot(df, aes(x=RT)) + geom_density() )
+@
+
+Here comes more LaTeX
+~~~
+
+
 
 [//]: # (Ilaria's "any text editor")
 
 
 [//]: # (Frank's "Why bother?")
 
+# Why bother?
+
+- best possible layout for every medium
+    - use screen fonts (sans serif) for editor
+    - eye friendly contrast
+    - print optimized fonts (serif) for print outs
+    - different format for different audiences (docx, pdf, epub)
+- accessibility
+    - only text files
+    - no clash between Word 2016, Word 2003, OpenOffice...
+- literate programming
+    - (quantitative) data analysis and description in one document
+    - figures in same document
+    - no copy&paste errors
 
 [//]: # (both)
 # Links
