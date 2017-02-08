@@ -65,13 +65,13 @@ Developed in 1960's to describe content of text documents for IBM's `SCRIPT` tex
 :eol.
 ~~~
 
-*GML is a procedural markup, not particlarly easy to read.*
+*GML is a procedural markup, not particularly easy to read.*
 
 ***
 
 # 1980's LaTeX
 
-LaTeX (and ConTeXt) are content structuring markup languages uses TeX for type setting
+LaTeX (and ConTeXt) are content structuring markup languages which use TeX for type setting
 
 ~~~
 \section{LaTeX: Describe the document structure}
@@ -119,7 +119,7 @@ Standardized markup language. Subsets were used in HTML and XML.
     - easy to learn
     - intuitive to read
     - history in forum, wiki, chat, sourcecode documentation
-- examples
+- examples:
     - BBCode "[`[url=http://bbcode.org]Website[/url]`](http://www.bbcode.org/)"
     - reStructuredText "[`.. _rst: docutils[...]`](http://docutils.sourceforge.net/rst.html)"
     - AsciiDoc "[`asciidoc.org/[website]`](http://asciidoc.org/)"
@@ -131,7 +131,7 @@ Standardized markup language. Subsets were used in HTML and XML.
 # Markdown
 
 
-The goal for the *lighweight Markup Languages* is to have text that is still **easy to read**, but that can be transformed to different outputs, for example:
+The goal of *lighweight Markup Languages* is to have text that is still **easy to read**, but that can be transformed to different outputs, for example:
 
 - PDF
 - HTML
@@ -161,12 +161,12 @@ See example BasicMDSyntax.md and relative outputs in .pdf and .doc
 1. you: 
     - edit Markdown file in text editor
     - save file
-    - tell pandoc generate a pdf
+    - tell pandoc to generate a pdf
 2. pandoc: 
-    - read Markdown -[filter]-> LaTeX
-    - start pdflatex
+    - reads Markdown -[filter]-> LaTeX
+    - starts pdflatex
 3. pdflatex: 
-    - read LaTeX -> pdf
+    - reads LaTeX -> pdf
 4. you:
     - look at pdf file 
 
@@ -178,12 +178,12 @@ See example BasicMDSyntax.md and relative outputs in .pdf and .doc
 - written by John MacFarlane (philosopher)
 - *general markup converter*
 - converts document structure, not layout
-- also converts to output only formats (pdf, docx...)
+- also converts to output-only formats (pdf, docx...)
 - eg
     - from rST to LaTeX
     - from Markdown to pdf
     - from html to markdown
-- usage (try it inside `./examples/` directory)
+- usage (try it inside `./examples/` directory, Input.md)
     - `pandoc --from html --to markdown Input.html --output Output.md`
     - `pandoc --from markdown --to latex Input.md --output Output.pdf`
     - `pandoc --from markdown --to docx Input.md --output Output.docx`
@@ -218,7 +218,7 @@ bibliography: examples/MyBibliography.bib
 
 
 - BibTeX
-    - references from all big publishers (Springer, Elsevier, Science...)
+    - references from all big publishers (Springer, Elsevier, Science...) + Scholar
     - export from Mendeley
     - easy management in [JabRef](https://www.jabref.org/)
     
@@ -287,7 +287,7 @@ csl: ieee.csl
 [//]: # (Ilaria's "what is RMarkdown")
 # RMarkdown
 
-Markdown vs RMarkdown
+Markdown vs. RMarkdown
 
 - another layer to the flow: knitr
 - R(knitr) -> Markdown -> pandoc -> ...
@@ -336,6 +336,7 @@ The "hardcore" way:
 * RMarkdown documentation: http://rmarkdown.rstudio.com/lesson-1.html, https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
 * BibTex reference: www.bibtex.org/
 * Jabref: http://www.jabref.org/
+* Knitr options: https://yihui.name/knitr/options/
 
 
 ***
