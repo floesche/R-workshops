@@ -1,0 +1,75 @@
+---
+title: "FinalMD"
+author: "Ilaria Torre"
+date: "8 February 2017"
+output: 
+  pdf_document:
+    keep_tex: yes
+---
+
+This document contains the previous Markdown and RMarkdown examples, plus the addition of a basic YAML header. Also, in the YAML header, within the specified output, we also specify keep_tex:true. This is because, by default, RStudio removes the intermediate tex file that it creates (it is necessary to "activate" pdflatex and convert to pdf, remember?), but by specifying that option, we can choose to keep the intermediate tex file.
+
+You can click Knit -> Knit to PDF, and you will see that two files will be created in the folder: a pdf file and a tex file.
+
+Next, you can open the tex file that has just been created (FinalMD.tex) in your LaTex editor, together with the template that you downloaded from the journal. In our example, we use the template from the INTERSPEECH conference series, which is located in the folder: examples/IS2016_paper_kit/LaTeX.
+
+In that folder, I have already created a modified template, where I basically copied the content of FinalMD.tex (starting from Header 1) and pasted it within the `\begin{document}... \end{document}`.
+
+I had to change a few things before I could compile correctly, though:
+
+* I moved the title and author where required in the template
+* I added author's information when required, such as affiliation and email address
+* I had to add a few packages which were not in the template, and a pandoc command. This is all commented in template+MD.tex.
+
+Then you click on compile and voilá! A paper ready to be sent to the publisher!
+
+# Header 1
+
+This is some very basic text.
+
+## Header 2
+
+This is some other text in a sub-heading. You can go on until level 6.
+
+Newlines are interpreted as new paragraphs.
+
+I can emphasize text like *this* or like **this**.
+
+Unordered lists are created with symbols like *, -, +... but the first item of the list needs to be preceded by an empty line:
+
+* I like cooking
++ I also like languages
+- and I like folk music
+    - especially Blackbeard's Tea Party!
+    
+Ordered lists are created with numbers and dots. Even if you mess up the numbering, MD will fix it for you:
+
+1. Item 1
+2. Item 2
+2. Item 3
+    
+Links can be added in text like this: [click here](http://www.blackbeardsteaparty.com/) or like this: <http://www.blackbeardsteaparty.com/>
+
+Images are basically links, but they have to be also separated from the main text by an empty line before and after:
+
+![A super fluffy cat](images/fluffycat.jpg)
+
+Tables can be written with -- and || symbols:
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+

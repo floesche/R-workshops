@@ -5,7 +5,7 @@ date: "8 February 2017"
 output:
   word_document: default
   pdf_document: null
-bibliography: examples/MyBibliography.bib
+bibliography: MyBibliography.bib
 ---
 
 # Introduction
