@@ -12,7 +12,6 @@ These files are for the *Coding Lunch*.
 
 - [doc](doc/) contains all documentation, for example the presentation
 - [examples](examples/) has some of the example files mentioned in the presentation
-- [data](data/) contains the data we use in the examples.
 
 
 ## Useful documentation
