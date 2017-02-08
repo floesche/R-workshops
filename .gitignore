@@ -1,7 +1,10 @@
 # Local changes
 examples/Out*
 examples/*pdf
+examples/*bak
+
 doc/*pdf
+
 
 # History files
 .Rhistory
