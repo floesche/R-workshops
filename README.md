@@ -1,6 +1,6 @@
 # Mark Ups and Downs
 
-These files are for the *Coding Lunch*.
+These files are for the *Coding Lunch* on 8 February 2017. You can download everything [in a zip file](https://github.com/floesche/R-workshops/archive/master.zip), or clone this repository.
 
 
 ## Presentation

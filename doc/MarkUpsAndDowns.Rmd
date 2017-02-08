@@ -324,8 +324,6 @@ See example: BasicRMD.rmd
 Don't know if there is time?
 TODO: prepare script, or use built in when new -> RMarkdown?
 
-# Include processing output
-
 
 # From "raw" text to beautiful pdf option 1
 
