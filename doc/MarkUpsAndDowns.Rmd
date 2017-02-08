@@ -4,7 +4,7 @@ subtitle: "Mark Ups and Downs"
 author: 
   - "Frank Loesche"
   - "Ilaria Torre"
-date: "6 February 2017"
+date: "8 February 2017"
 output: beamer_presentation
 ---
 
@@ -163,8 +163,8 @@ See example BasicMDSyntax.md and relative outputs in .pdf and .doc
     - save file
     - tell pandoc to generate a pdf
 2. computer: 
-    - Markdown --[pandoc(filter)]--> LaTeX
-    - LaTeX --[pdflatex]--> pdf
+    - Markdown --{pandoc(filter)}--> LaTeX
+    - LaTeX --{pdflatex}--> pdf
 3. you:
     - look at pdf file 
 
@@ -298,7 +298,7 @@ csl: ieee.csl
 Markdown vs. RMarkdown
 
 - another layer to the flow: knitr
-- Rmd --[R(knitr)]--> Markdown --[pandoc]--> ...
+- Rmd --{R(knitr)}--> Markdown --{pandoc}--> ...
 
 See example: BasicRMD.rmd
 
@@ -316,14 +316,8 @@ See example: BasicRMD.rmd
 ***
 
 [//]: # (Ilaria's "camera ready")
-# RMarkdown example
 
-
-Don't know if there is time?
-TODO: prepare script, or use built in when new -> RMarkdown?
-
-
-# From "raw" text to beautiful pdf option 1
+# From "raw" text to beautiful pdf
 
 The "quick'n'dirty" way:
 
@@ -383,8 +377,8 @@ see [example/apa.template](../example/apa.template) and [example/exampleArticle.
 
 - Literate Programming for LaTeX
 - Workflow:
-    - Rnw --[R(knitr)]--> LaTeX
-    - LaTeX --[pdflatex]--> pdf
+    - Rnw --{R(knitr)}--> LaTeX
+    - LaTeX --{pdflatex}--> pdf
 
 ~~~
 \section{Nomal LaTex document}
