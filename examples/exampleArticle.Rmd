@@ -1,0 +1,59 @@
+---
+title: "Example article on how to use templates"
+author: "Frank Loesche"
+institute: "Plymouth University"
+date: "7 February 2017"
+abstract:
+  It is not particularly difficult to output the content of Markdown and RMarkdown files directly into a desired template. This current example uses a very simple template, following the APA recommendations. The files apa.template and apa-simple.template are modified versions of sample articles, the content comes from this document.
+keywords: 
+- R
+- RMarkdown
+- APA
+- LaTeX
+- template
+output:
+  pdf_document:
+    template: "apa.template"
+bibliography: MyBibliography.bib
+---
+
+# Introduction
+
+Even though this example is not at all related to @Torre2016 I just wanted to demosnstrate citations in here as well. This initial paragraph is followed by a number of meaningless lorem ipsum paragraphs. Please ignore.
+
+
+Saperet ocurreret mel te, nec audiam labitur scriptorem in, cu tantas impetus vel. Alia oratio vix at, cum at oporteat periculis ullamcorper. Mea dicunt mollis tacimates cu, eam ipsum iuvaret molestie ad. Ea mel quas insolens rationibus, pri ut diam erat detracto, ut nec facete denique maluisset. Ne usu unum perpetua.
+
+
+Etiam doctus eu his, mea alia tota facilis eu, mucius adipisci consulatu ea pro. Pri ea sale salutandi repudiare, qui ea atqui facer accusam. Eu usu reque vocibus, id doctus facilisi imperdiet qui. Vix facete suscipit no.
+
+# Another header
+
+Veniam consectetuer ius ne, ex essent integre deseruisse qui. Eleifend definiebas reformidans mel no, debet scripserit nam ne. Vim cibo fabulas lobortis ei. Summo dicit eloquentiam mel ne, civibus quaerendum mea ei, appareat delicata forensibus te pro. In nisl ponderum antiopam sea. Mei ne maiorum praesent necessitatibus, nulla integre nam et.
+
+## Second level header
+
+Sea ignota iriure eu, fastidii appellantur usu et. Ut ius dicit eligendi interesset. An mei quod doctus assentior, in vim platonem oportere. Ea inani nostro fuisset usu. His ex alii novum munere, at graece inermis denique vis, saperet corpora eos at. Nulla deserunt qui an, at odio mentitum comprehensam pro.
+
+- one element
+- another one
+- a third one
+
+No duis epicuri usu, ex vel delenit erroribus. Vis id diam interesset eloquentiam. Eum te eruditi mandamus, ut vix recusabo adolescens. Adhuc maluisset deterruisset vix te, ex vis viris nostro explicari.
+
+
+Vel id suas omnesque, nam errem persequeris te, quot recusabo appellantur ex vim. Nam ad esse viris sapientem. Qui id oportere periculis, quo amet persius atomorum ad. Eu adolescens voluptatibus delicatissimi mel, est modo lucilius ne. Nisl labores nonumes mel eu. Erant maiestatis democritum sed cu.
+
+1. this is very important
+2. this not so much
+3. even less.
+
+Eros magna vix at, possit invidunt vis id. Ad inani epicurei usu, simul quando te nec. Modo molestie voluptatum an has, vim et lorem iusto vocibus. Pro magna rebum ad, idque alterum consequuntur ut ius. Eu saperet omittam ponderum sit, qui volutpat maiestatis ut, timeam sanctus constituto sit ea.
+
+
+
+Sea ignota iriure eu, fastidii appellantur usu et. Ut ius dicit eligendi interesset. An mei quod doctus assentior, in vim platonem oportere. Ea inani nostro fuisset usu. His ex alii novum munere, at graece inermis denique vis, saperet corpora eos at. Nulla deserunt qui an, at odio mentitum comprehensam pro.
+
+No duis epicuri usu, ex vel delenit erroribus. Vis id diam interesset eloquentiam. Eum te eruditi mandamus, ut vix recusabo adolescens. Adhuc maluisset deterruisset vix te, ex vis viris nostro explicari.
+
+# Bibliography {-}

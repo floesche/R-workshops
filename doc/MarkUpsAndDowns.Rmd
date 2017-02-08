@@ -175,17 +175,28 @@ It can be written in any text editor!
 
 - written by John MacFarlane (philosopher)
 - *general markup converter*
+- download from [http://pandoc.org](http://pandoc.org/installing.html)
+- part of RStudio
+
 - converts document structure, not layout
+- 
 - also converts to output only formats (pdf, docx...)
+
+***
+
+# Pandoc 
+
 - eg
     - from rST to LaTeX
     - from Markdown to pdf
     - from html to markdown
 - usage (try it inside `./examples/` directory)
+    - `pandoc Input.md --output Output.pdf`
+    
     - `pandoc --from html --to markdown Input.html --output Output.md`
     - `pandoc --from markdown --to latex Input.md --output Output.pdf`
     - `pandoc --from markdown --to docx Input.md --output Output.docx`
-    - `pandoc Input.md --output Output.pdf`
+    
 
 ***
 
@@ -287,7 +298,7 @@ csl: ieee.csl
 - compiler creates output format
 - code blocks can run separately (fast turnaround)
 
-
+![R code chunk and it's replacement](img/code2plot.png)
 
 
 [//]: # (Ilaria's "camera ready")
@@ -312,9 +323,45 @@ The "quick'n'dirty" way:
 [^1]: Note: you will probably need to change some of the parameters in the journal template before it works out. Here Google will be your best friend!
 
 [//]: # (Frank's "template")
-# From "raw" text to beautiful pdf option 2
+# "Hack" template
 
-The "hardcore" way:
+1. download template from publisher (eg [APA](http://www.ctan.org/tex-archive/macros/latex/contrib/apa6/samples))
+2. modify everything above `\begin{document}` according to your needs
+3. replace document content with `$body$`
+4. add template to YAML of Rmd:
+
+~~~
+...
+output:
+  pdf_document:
+    template: "apa-simple.template"
+---
+~~~
+
+see [example/apa-simple.template](../example/apa-simple.template) and [example/exampleArticle.Rmd](../example/exampleArticle.Rmd)
+
+***
+
+# Slightly advanced hack
+
+1. follow previous steps 1 to 4
+2. modify other elements in template with YAML variables:
+
+~~~
+\keywords{APA style, demonstration}
+~~~
+
+with 
+
+~~~
+$if(keywords)$
+\keywords{$for(keywords)$$keywords$$sep$, $endfor$}
+$endif$
+~~~
+
+see [example/apa.template](../example/apa.template) and [example/exampleArticle.Rmd](../example/exampleArticle.Rmd)
+
+***
 
 [//]: # (Frank's "Sweave")
 
