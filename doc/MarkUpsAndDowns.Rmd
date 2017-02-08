@@ -393,9 +393,12 @@ Here comes more LaTeX
     - only text files
     - no clash between Word 2016, Word 2003, OpenOffice...
 - literate programming
+    - reproducible research (replicability crisis)
     - (quantitative) data analysis and description in one document
     - figures in same document
     - no copy&paste errors
+
+***
 
 # Links
 
