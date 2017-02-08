@@ -139,7 +139,7 @@ It can be written in any text editor!
 
 # Markdown syntax
 
-See example BasicMDSyntax.md and relative outputs in .pdf and .doc
+See [`examples/BasicMDSyntax.md`](../examples/BasicMDSyntax.md) and relative outputs in [`.pdf`](../examples/BasicMDSyntax.pdf) and [`.docx`](../examples/BasicMDSyntax.docx).
 
 * headers
 * emphasis (**bold**, *italics*)
@@ -184,7 +184,7 @@ See example BasicMDSyntax.md and relative outputs in .pdf and .doc
     - from rST to LaTeX
     - from Markdown to pdf
     - from html to markdown
-- usage (try it inside `./examples/` directory)
+- usage (try it inside [`./examples/`](../examples/) directory^[open terminal, change directory to [`./examples/`](../examples/), run commands in terminal])
     - `pandoc Input.md --output Output.pdf`
     
     - `pandoc --from html --to markdown Input.html --output Output.md`
@@ -213,6 +213,7 @@ bibliography: examples/MyBibliography.bib
 ---
 ~~~
 
+***
 
 # Bibliography
 
@@ -221,19 +222,22 @@ bibliography: examples/MyBibliography.bib
     - references from all big publishers (Springer, Elsevier, Science...) + Scholar
     - export from Mendeley
     - easy management in [JabRef](https://www.jabref.org/)
-    
+
+*** 
+
 # References in MD file
 
-See example References.MD
+See [`examples/References.md`](../examples/References.md)
 
-    
+***
+
 # Bibliography setup in text file
 
 
 - bibliography in same path 
-    - [examples/MyBibliography.bib](../examples/MyBibliography.bib)
+    - [`examples/MyBibliography.bib`](../examples/MyBibliography.bib)
 - add YAML header
-    - see examples at [examples/ReferenceTest.Rmd](../examples/ReferenceTest.Rmd)
+    - see examples at [`examples/ReferenceTest.Rmd`](../examples/ReferenceTest.Rmd)
 
 ~~~
 ---
@@ -243,7 +247,6 @@ bibliography: MyBibliography.bib
 ~~~
 
 ![citation](img/cite1.png)
-
 
 ***
 
@@ -291,7 +294,7 @@ Markdown vs. RMarkdown
 - another layer to the flow: knitr
 - Rmd --{R(knitr)}--> Markdown --{pandoc}--> ...
 
-See example: BasicRMD.rmd
+See [`examples/BasicRMD.rmd`](../examples/BasicRMD.rmd)
 
 ***
 
@@ -334,7 +337,7 @@ output:
 ---
 ~~~
 
-see [example/apa-simple.template](../example/apa-simple.template) and [example/exampleArticle.Rmd](../example/exampleArticle.Rmd)
+see [`examples/apa-simple.template`](../examples/apa-simple.template) and [`examples/exampleArticle.Rmd`](../examples/exampleArticle.Rmd)
 
 ***
 
@@ -355,7 +358,7 @@ $if(keywords)$
 $endif$
 ~~~
 
-see [example/apa.template](../example/apa.template) and [example/exampleArticle.Rmd](../example/exampleArticle.Rmd)
+see [`examples/apa.template`](../examples/apa.template) and [`examples/exampleArticle.Rmd`](../examples/exampleArticle.Rmd)
 
 ***
 
@@ -403,10 +406,11 @@ The most recent links are in the [README.md](../README.md).
 
 # Backup
 
-# 1970's TeX
+***
+
+## 1970's TeX
 
 Developed in the late 1970's to typeset books.
-
 
 ~~~
 \font\xmplbx = cmbx10 scaled \magstephalf
@@ -419,9 +423,11 @@ specialised in digital typesets.
 \bye
 ~~~
 
-- `troff` / `groff` ...
+- `troff` / `groff` are other examples for Markup Languages
 
-# BTW: WYSIWYG
+***
+
+## BTW: WYSIWYG
 
 While 1990's WYSIWYG word processors thought it would be a good idea to use hidden binary (=non-readable) markup inside document formats such as `.doc`, they now internally use readable markup. Just rename a `.docx` file to `.zip`, open the archive and look at the file `./word/document.xml`:
 

@@ -5,14 +5,19 @@ These files are for the *Coding Lunch* on 8 February 2017. You can download ever
 
 ## TODO
 
-- upload pres pdf [F]
-- double check files [I]
-- add links to Literate Programming [F]
-- Links to Sweave [F]
-- Add example Makefile [F]
-- update examples/README.md [I]
-- create doc/README.md [I]
-- send email with link [I]
+Things we have to do before sending out the link to everyone.
+
+
+- [ ] upload pres pdf [F]
+- [ ] Abstract for WHAT's UP website [I]
+- [ ] Update simple-apa and example Article [F]
+- [ ] double check files [I]
+- [ ] add links to Literate Programming [F]
+- [ ] Links to Sweave [F]
+- [ ] Add example Makefile [F]
+- [ ] update examples/README.md [I]
+- [ ] create doc/README.md [I]
+- [ ] send email with link [I]
 
 ## Presentation
 
