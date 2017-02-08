@@ -15,7 +15,7 @@ Things we have to do before sending out the link to everyone.
 - [x] add links to Literate Programming [F]
 - [x] Links to Sweave [F]
 - [ ] Add example Makefile [F]
-- [ ] update examples/README.md [I]
+- [x] update examples/README.md [I]
 - [ ] create doc/README.md [I]
 - [ ] remove this ToDo list and send email with link [I]
 
