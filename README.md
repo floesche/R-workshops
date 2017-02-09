@@ -1,6 +1,8 @@
 # Mark Ups and Downs
 
-This repository contains all the files used to create a presentation on using Markdown for writing academic papers, and on some steps that it is possible to take to go from "raw" Markdown texts to final, camera-ready paper ready for submission to a journal or conference. The presentation was given by [Frank Loesche](https://www.cognovo.eu/frank-loesche) and [Ilaria Torre](https://cognovo.eu/ilaria-torre), on 08/02/2017, at a *Coding Lunch* session in the [School of Psychology](https://www.plymouth.ac.uk/schools/psychology/) of Plymouth University. They are both part of the [CogNovo Research Group](https://CogNovo.eu) there.
+This repository contains all the files used to create a presentation on using Markdown for writing academic papers, and on some steps that it is possible to take to go from "raw" Markdown texts to final, camera-ready paper ready for submission to a journal or conference. By  utilising the *literate programming* approach and applying it to the field of Cognitive Science and particularly Psychology, this workshop provides a solution on how to generate reproducible research and academic writing.
+
+The presentation was given by [Frank Loesche](https://www.cognovo.eu/frank-loesche) and [Ilaria Torre](https://cognovo.eu/ilaria-torre), on 08/02/2017, at a *Coding Lunch* session in the [School of Psychology](https://www.plymouth.ac.uk/schools/psychology/) of Plymouth University. They are both part of the [CogNovo Research Group](https://CogNovo.eu) there.
 
 You can download everything [in a zip file](https://github.com/floesche/R-workshops/archive/master.zip), or clone this repository.
 
