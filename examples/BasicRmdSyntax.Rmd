@@ -3,8 +3,8 @@ title: "Basic RMarkdown options"
 author: "Ilaria Torre"
 date: "8 February 2017"
 output:
-  word_document: default
   pdf_document: default
+  word_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -32,7 +32,11 @@ plot(pressure)
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 
+## Including tables
+
+The following table is generated from a data frame using the [kable()](https://www.rdocumentation.org/packages/knitr/versions/1.15.1/topics/kable) function in knitr.
+
 ```{r}
 library(knitr)
-kable(head(cars), format="pandoc", caption="example table generated from the head() of cars data frame. The function kable() is part of the knitr package.")
+kable(head(cars), format="pandoc", caption="example table generated from dataframe")
 ```
