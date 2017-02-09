@@ -30,3 +30,9 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+```{r}
+library(knitr)
+kable(head(cars), format="pandoc", caption="example table generated from the head() of cars data frame. The function kable() is part of the knitr package.")
+```
