@@ -27,13 +27,13 @@ $endif$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
- \usepackage{csquotes}
- \usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
- \DeclareLanguageMapping{american}{american-apa}
- \addbibresource{bibliography.bib}
- 
- \title{Sample APA-Style Document Using the \textsf{apa6} Package}
- 
+\usepackage{csquotes}
+\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{bibliography.bib}
+
+\title{Sample APA-Style Document Using the \textsf{apa6} Package}
+
 \author{Frank Loesche}
 \affiliation{CogNovo | Plymouth University}
  
