@@ -31,24 +31,47 @@
 
 \usepackage[american]{babel}
 
-\usepackage{csquotes}
-\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
-\DeclareLanguageMapping{american}{american-apa}
-\addbibresource{bibliography.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copied from pandoc's latex.default
 
-\title{Sample APA-Style Document Using the \textsf{apa6} Package}
+%% for compact lists
+\providecommand{\tightlist}{%
+\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
-\author{Brian D. Beitzel}
-\affiliation{SUNY Oneonta}
+%% links
+\usepackage[unicode=true]{hyperref}
 
-\leftheader{Beitzel}
+%% if markdown has graphics, then resize them to the width of te column.
+$if(graphics)$
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+$endif$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\abstract{This demonstration paper uses the \textsf{apa6} \LaTeX\
-  class to format the document in compliance with the 6th Edition of
-  the American Psychological Assocation's \textit{Publication Manual.}
-  The references are managed using \textsf{biblatex}.}
 
-\keywords{APA style, demonstration}
+ \usepackage{csquotes}
+ \usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
+ \DeclareLanguageMapping{american}{american-apa}
+ \addbibresource{bibliography.bib}
+ 
+ \title{Sample APA-Style Document Using the \textsf{apa6} Package}
+ 
+\author{Frank Loesche}
+\affiliation{CogNovo | Plymouth University}
+ 
+\leftheader{Loesche}
+ 
+\abstract{This template uses the header from \texttt{apa-simple.template} and only adds the \texttt{body} output from Markdown. This template can therefore only be used for one output (paper), you need to edit it for every output separately. But on the upside, this one change is much easier to hand. Have a look at apa.template instead, if you are looking for a more complete way (or for the R-package rticles, see links in README.md)}
+ 
+\keywords{example template, hack}
+
 
 \begin{document}
 \maketitle
