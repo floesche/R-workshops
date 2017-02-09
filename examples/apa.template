@@ -16,14 +16,14 @@ $for(bibliography)$
 \addbibresource{$bibliography$}
 $endfor$
 $endif$
-
+\usepackage[unicode=true]{hyperref}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Copied from pandoc's latex.default
 
 %% for compact lists
-\providecommand{\tightlist}{%
-\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+ \providecommand{\tightlist}{%
+ \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 %% links
 \usepackage[unicode=true]{hyperref}
@@ -41,7 +41,6 @@ $if(graphics)$
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 $endif$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 $if(title)$
 \title{$title$$if(thanks)$\thanks{$thanks$}$endif$}

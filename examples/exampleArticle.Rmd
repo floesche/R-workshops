@@ -4,7 +4,7 @@ author: "Frank Loesche"
 institute: "Plymouth University"
 date: "7 February 2017"
 abstract:
-  This example uses apa.template and actually puts some meta-data and variables from the markdown file into the template. The same template can therefore be used across different publications, but the template is slightly more difficult to generate. Have a look at apa-simple.template for a much simpler example.
+   This example uses apa.template and actually puts some meta-data and variables from the markdown file into the template. The same template can therefore be used across different publications, but the template is slightly more difficult to generate. Have a look at apa-simple.template for a much simpler example.
 keywords: 
 - R
 - RMarkdown
@@ -16,11 +16,11 @@ output:
     keep_tex: yes
     template: apa.template
     # template: "apa-simple.template"
-bibliography: MyBibliography.bib
----
-
+ bibliography: MyBibliography.bib
+ ---
+ 
 # Introduction
-
+ 
 Citations go inside square brackets and are separated by semicolons. Each citation must have a key, composed of ‘@’ + the citation identifier from the database. For example, we have published a paper together [@Torre2016]. In another paper, which we cite in text, without parentheses, @Navon1977 talks about visual perception; and in another paper, for which we don't want to repeat the name of the author, he talks about psychology again [-@Navon1984]. This initial paragraph is followed by a number of meaningless lorem ipsum paragraphs. Please ignore.
 
 

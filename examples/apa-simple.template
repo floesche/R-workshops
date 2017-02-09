@@ -2,7 +2,6 @@
 
 \usepackage[american]{babel}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Copied from pandoc's latex.default
 
@@ -37,12 +36,13 @@ $endif$
 
 \author{Frank Loesche}
 \affiliation{CogNovo | Plymouth University}
-
+ 
 \leftheader{Loesche}
-
+ 
 \abstract{This template uses the header from \texttt{apa-simple.template} and only adds the \texttt{body} output from Markdown. This template can therefore only be used for one output (paper), you need to edit it for every output separately. But on the upside, this one change is much easier to hand. Have a look at apa.template instead, if you are looking for a more complete way (or for the R-package rticles, see links in README.md)}
-
+ 
 \keywords{example template, hack}
+
 
 \begin{document}
 \maketitle
