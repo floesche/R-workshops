@@ -305,7 +305,7 @@ See [`examples/BasicRMD.rmd`](../examples/BasicRMD.rmd)
 - compiler creates output format
 - code blocks can run separately (fast turnaround)
 
-![R code chunk and it's replacement](img/code2plot.png)
+![R code chunk and its replacement](img/code2plot.png)
 
 ***
 
