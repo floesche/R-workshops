@@ -4,7 +4,7 @@ author: "Frank Loesche"
 institute: "Plymouth University"
 date: "7 February 2017"
 abstract:
-  It is not particularly difficult to output the content of Markdown and RMarkdown files directly into a desired template. This current example uses a very simple template, following the APA recommendations. The files apa.template and apa-simple.template are modified versions of sample articles, the content comes from this document.
+   This example uses apa.template and actually puts some meta-data and variables from the markdown file into the template. The same template can therefore be used across different publications, but the template is slightly more difficult to generate. Have a look at apa-simple.template for a much simpler example.
 keywords: 
 - R
 - RMarkdown
@@ -13,14 +13,32 @@ keywords:
 - template
 output:
   pdf_document:
-    template: "apa.template"
-bibliography: MyBibliography.bib
----
-
+    keep_tex: yes
+    template: apa.template
+    # template: "apa-simple.template"
+ bibliography: MyBibliography.bib
+ ---
+ 
 # Introduction
+ 
+Citations go inside square brackets and are separated by semicolons. Each citation must have a key, composed of ‘@’ + the citation identifier from the database. For example, we have published a paper together [@Torre2016]. In another paper, which we cite in text, without parentheses, @Navon1977 talks about visual perception; and in another paper, for which we don't want to repeat the name of the author, he talks about psychology again [-@Navon1984]. This initial paragraph is followed by a number of meaningless lorem ipsum paragraphs. Please ignore.
 
-Even though this example is not at all related to @Torre2016 I just wanted to demosnstrate citations in here as well. This initial paragraph is followed by a number of meaningless lorem ipsum paragraphs. Please ignore.
 
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Two examples distributions"}
+library(ggplot2)
+set.seed(2820)
+
+condition1 <- c(rnorm(100, mean = 2.7, sd = 1.4))
+condition2 <- c(rnorm(100, mean = 4.5, sd = 1.8))
+
+df <- data.frame(condition1, condition2)
+
+ggplot(df) + 
+  geom_density(aes(condition1), fill="red", alpha=.3)  + 
+  geom_density(aes(condition2), fill="blue", alpha=.3) +
+  labs(x="Questionnaire score", y="Frequency", title="Results from Questionnaire A") +
+  xlim(0,7)
+```
 
 Saperet ocurreret mel te, nec audiam labitur scriptorem in, cu tantas impetus vel. Alia oratio vix at, cum at oporteat periculis ullamcorper. Mea dicunt mollis tacimates cu, eam ipsum iuvaret molestie ad. Ea mel quas insolens rationibus, pri ut diam erat detracto, ut nec facete denique maluisset. Ne usu unum perpetua.
 
