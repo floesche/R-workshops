@@ -22,6 +22,7 @@ Things we have to do before sending out the link to everyone.
 - [ ] Add example Makefile [F]
 - [x] update examples/README.md [I]
 - [x] create doc/README.md [I]
+- [x] update current README with more info [I]
 - [ ] remove this ToDo list and send email with link [I]
 
 ## Presentation
