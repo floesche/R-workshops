@@ -2,28 +2,7 @@
 
 This repository contains all the files used to create a presentation on using Markdown for writing academic papers, and on some steps that it is possible to take to go from "raw" Markdown texts to final, camera-ready paper ready for submission to a journal or conference. The presentation was given by [Frank Loesche](https://www.cognovo.eu/people/research-fellows/frank-loesche.php) and [Ilaria Torre](http://cognovo.eu/people/research-fellows/ilaria-torre.php), on 08/02/2017, at a *Coding Lunch* session in the [School of Psychology](https://www.plymouth.ac.uk/schools/psychology/) of Plymouth University. 
 
-* The doc folder contains the presentation slides.
-* The examples folder contains the examples mentioned in the presentation as well as others.
-
 You can download everything [in a zip file](https://github.com/floesche/R-workshops/archive/master.zip), or clone this repository.
-
-
-## TODO
-
-Things we have to do before sending out the link to everyone.
-
-
-- [x] upload pres pdf [F]
-- [ ] Abstract for WHAT's UP website [I]
-- [ ] Update simple-apa and example Article [F]
-- [x] double check files [I]
-- [x] add links to Literate Programming [F]
-- [x] Links to Sweave [F]
-- [ ] Add example Makefile [F]
-- [x] update examples/README.md [I]
-- [x] create doc/README.md [I]
-- [x] update current README with more info [I]
-- [ ] remove this ToDo list and send email with link [I]
 
 ## Presentation
 
