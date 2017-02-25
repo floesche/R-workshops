@@ -4,7 +4,9 @@
 all : presentation allexamples
 
 presentation :
-	$(MAKE) -C doc/ MarkUpsAndDowns
+	$(info "attempting to build presentation in directory 'doc'")
+	@$(MAKE) --no-print-directory -C doc/ all
 
 allexamples :
-	$(MAKE) -C examples/ all
+	$(info "attempting to build all examples in directory 'examples'")
+	@$(MAKE) --no-print-directory -C examples/ all

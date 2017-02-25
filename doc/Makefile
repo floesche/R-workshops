@@ -1,3 +1,7 @@
-MarkUpsAndDowns :
-	R -e 'library(knitr); knit("MarkUpsAndDowns.Rmd");'
-	pandoc -t beamer "MarkUpsAndDowns.md" -o "MarkUpsAndDowns.pdf"
+.PHONY = MarkUpsAndDowns
+
+all : MarkUpsAndDowns.pdf
+
+%.pdf : %.Rmd
+	Rscript -e 'library(knitr); knit("$<", quiet=TRUE, output="$(basename $<).md");'
+	pandoc -t beamer "$(basename $<).md" -o "$@"

@@ -51,7 +51,7 @@ You can download everything [in a zip file](https://github.com/floesche/R-worksh
 ### Examples
 
 - [knitr examples](https://github.com/yihui/knitr-examples)
-    
+
 ### Further Readings
 
 - [Literate Programming (original article)](https://doi.org/10.1093/comjnl/27.2.97)
@@ -59,3 +59,7 @@ You can download everything [in a zip file](https://github.com/floesche/R-worksh
 - [Replication Crisis](https://en.wikipedia.org/wiki/Replication_crisis)
 
 - [Other approach to writing Articles (rticles)](https://github.com/rstudio/rticles)
+
+## Make
+
+If you are on a system that supports Makefiles, you can type `make` in a terminal to generate all the files, for example the presentation and the examples. Make allows to quickly regenerate target files from a changed source by keeping track of what needs to be done. In RStudio you can rebuild everything by using the keyboard shortcut [Ctrl]-[Shift]-[B] or select `Build`->`Build All` in the menu. Thanks to @earcanal for the initial Makefile.
