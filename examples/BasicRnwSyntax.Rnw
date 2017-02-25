@@ -28,7 +28,7 @@ opts_chunk$set(
 \begin{document}
 
 
-\section{Questionnaire A\footnote{Text from https://en.wikipedia.org/wiki/Questionnaire}}
+\section[Questionnaire A]{Questionnaire A\footnote{Text from https://en.wikipedia.org/wiki/Questionnaire}}
 
 A questionnaire is a research instrument consisting of a series of questions and other prompts for the purpose of gathering information from respondents. Although they are often designed for statistical analysis of the responses, this is not always the case. The questionnaire was invented by the Statistical Society of London in 1838 (\cite{Gault1907}). A copy of the instrument is published in the Journal of the Statistical Society, Volume 1, Issue 1, 1838, pages 5–13.
 
@@ -43,11 +43,12 @@ condition2 <- c(rnorm(100, mean = 4.5, sd = 1.8))
 
 df <- data.frame(condition1, condition2)
 
-ggplot(df) + 
-  geom_density(aes(condition1), fill="red", alpha=.3)  + 
+ggplot(df) +
+  geom_density(aes(condition1), fill="red", alpha=.3)  +
   geom_density(aes(condition2), fill="blue", alpha=.3) +
   labs(x="Questionnaire score", y="Frequency", title="Results from Questionnaire A") +
-  xlim(0,7)
+  xlim(0,7) +
+  theme_bw()
 
 @
 

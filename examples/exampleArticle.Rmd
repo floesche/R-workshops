@@ -16,9 +16,9 @@ output:
     keep_tex: yes
     template: apa.template
     # template: "apa-simple.template"
- bibliography: MyBibliography.bib
- ---
- 
+bibliography: MyBibliography.bib
+---
+
 # Introduction
  
 Citations go inside square brackets and are separated by semicolons. Each citation must have a key, composed of ‘@’ + the citation identifier from the database. For example, we have published a paper together [@Torre2016]. In another paper, which we cite in text, without parentheses, @Navon1977 talks about visual perception; and in another paper, for which we don't want to repeat the name of the author, he talks about psychology again [-@Navon1984]. This initial paragraph is followed by a number of meaningless lorem ipsum paragraphs. Please ignore.
