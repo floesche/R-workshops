@@ -1,7 +1,18 @@
 
-.PHONY = all
+.PHONY = all clean
 
 all : BasicMDSyntax BasicRmdSyntax BasicRnwSyntax exampleArticle FinalMD References
+
+rebuild : clean all
+
+clean : cleantmp cleanout
+
+cleantmp :
+	@rm -rf  *aux *bak *bbl *bcf *blg *fdb_latexmk *fls *log *out *run.xml
+	@rm -rf _figure-cache/ cache/ figure/
+
+cleanout :
+	@rm -f *pdf *docx
 
 BasicMDSyntax : BasicMDSyntax.pdf BasicMDSyntax.docx
 
