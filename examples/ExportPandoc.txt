@@ -1,0 +1,7 @@
+::pandoc_output
+NPP_SAVE
+CD $(CURRENT_DIRECTORY)
+pandoc.exe --from markdown  --smart --number-sections --filter pandoc-citeproc --to docx "$(FILE_NAME)" --output $(NAME_PART).docx
+pandoc.exe --from markdown  --smart --number-sections --filter pandoc-citeproc  --to latex "$(FILE_NAME)" --output $(NAME_PART).pdf
+pandoc.exe --from markdown  --smart --number-sections --filter pandoc-citeproc -s --biblatex --to latex "$(FILE_NAME)" --output $(NAME_PART).tex
+pandoc.exe --from markdown  --smart --number-sections --filter pandoc-citeproc --to epub "$(FILE_NAME)" --output $(NAME_PART).epub
