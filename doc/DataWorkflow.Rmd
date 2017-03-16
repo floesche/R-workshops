@@ -1,0 +1,722 @@
+---
+title: "Data Workflow"
+subtitle: "The Restaurant at the End of the tidyverse"
+author: "Frank Loesche"
+date: "16 March 2017"
+output: beamer_presentation
+abstract: |
+  Data manipulation is at the core of any data analysis. In this workshop I will show some basic data loading, manipulation, and visualisation tricks. The workflow will be based on the {Import -> Tidy -> {Transform -> Visualise -> Model} -> Communicate} workflow. Based on the tidyverse packages, I will show some best practices on how to handle data.
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+knitr::opts_knit$set(
+  root.dir = "../examples/tidyverse/OHBDS/"
+)
+knitr::opts_chunk$set(
+  echo = TRUE, 
+  warning = FALSE,
+  message = FALSE,
+  dev = "pdf",
+  fig.width = 5, 
+  fig.height = 3,
+  width = 40, 
+  breaklines = TRUE, 
+  tidy.opts = list(width.cutoff = 40))
+
+## tibble-options
+options(
+  tibble.print_min = 2L, 
+  tibble.print_max = 4L, 
+  tibble.width = 50L) 
+```
+
+# Synopsis
+
+I was asked for *life-saving tips to make your life easier when using the computer*
+
+- Workshop with Bodo Winter: stats OK, coding difficult
+- Coding Club
+    - different levels of knowledge, specific topics
+    - scripting, based on personal preferences
+- Observations
+    - mixture of copy & past from google etc
+    - unstructured workflow
+
+## Gap
+
+- consistent workflow from raw data to publication
+
+
+
+
+# Framework
+
+## Reproducible (science)
+
+1. document every step
+1. avoid (analytical) discontinuity
+1. never copy & paste
+1. automate where possible (**DRY**, **D**ont **R**epeat **Y**ourself)
+1. consider everything not saved in a file as lost
+1. single source of truth (only one copy of data files)
+
+
+
+# tidyverse
+
+> The tidyverse is a collection of R packages that share common philosophies and are designed to work together. [^2]
+
+## collection of packages:
+
+ggplot, tibble, tidyr, dplyr, haven, readr, string, forcats, broom, purrr…
+
+## common "philosophy" / grammar
+
+Basic Idea: **what** %>% **how** -> **result**
+
+`df %>% filter(Age > 25) %>% select(Name) -> drink`
+
+  [^2]: from http://tidyverse.org
+
+
+
+# Workflow
+
+
+![Workflow for data exploration [^1]](img/data-science-explore.png)
+
+  [^1]: from *R for Data Science*, http://r4ds.had.co.nz
+
+# Import
+
+## Goal
+
+- have *some* data in R (data frame, tibble)
+
+## Problem
+
+- 1000s of input sources
+
+## Challenge
+
+- data might update at any time during the data exploration
+
+
+# Import
+
+## Data Sources
+
+- experimental data
+- questionnaires
+
+
+## File formats
+
+- CSV, TSV... (readr)
+- SAS, SPSS, Stat (haven)
+- MATLAB
+- Excel (readxl)
+- data bases, SQL
+
+
+# Import
+
+## File Structure
+
+At the beginning:
+
+```
+~frank/data-analysis/
+                    /data/raw-data.csv
+                    /Journal.Rmd
+                    /functions.R
+```
+
+- `data/*`: input
+- `Journal.Rmd`: document for everything
+- `functions.R`: functional units
+
+---
+
+## Raw Data
+
+Open Hemispheric Brain Dominance Scale [^3]
+
+- 20 scale items + reaction times
+- `codebook.txt` describes content
+- have a look at the data:
+
+```
+1|Q1  Q2  Q3  Q4…E1  E2  E3…others
+2|4	1	5	1	4	2	5…
+3|2	3	3	5	5	5	5…
+…
+29545|4	1	1	3	2	5	1	2	5…
+```
+
+  [^3]: data source: http://personality-testing.info/_rawdata/
+
+---
+
+## Load data
+
+Import CSV the usual way:
+
+```{r}
+data <- read.csv("data/raw-data.csv")
+nrow(data)
+```
+
+(speak): **Yay!**
+
+---
+
+## Basic information
+
+```{r}
+str(data)
+```
+
+(speak): **not good**
+
+```{r}
+rm(data)
+```
+
+
+---
+
+## Back to data: 
+
+```
+1|Q1  Q2  Q3  Q4…E1  E2  E3…others
+2|4	1	5	1	4	2	5…
+```
+
+### Observation
+
+- has no comma, as in Comma Separated Values (CSV)
+- has "tabs" as in Tab Separated Values (TSV)
+
+
+---
+
+## Load data, again
+
+- configure separator (using `sep="\t"`)
+- use meaningful names
+- develop code style (or follow [^4])
+
+
+```{r}
+raw_data <- read.csv("data/raw-data.csv", sep = "\t")
+nrow(raw_data)
+str(raw_data, list.len = 1)
+```
+
+  [^4]: http://style.tidyverse.org
+
+---
+
+## Draft to Section
+
+
+```{r}
+import <- function() {
+  data <- read.csv("data/raw-data.csv", sep = "\t")
+  return(data)
+}
+raw_data <- import()
+```
+
+- move `import()` to `functions.R`
+
+## Journal.Rmd
+
+```{r, eval = FALSE}
+source("functions.R")
+raw_data <- import()
+```
+
+---
+
+`raw_data <- import()`
+
+
+## Good
+
+- `raw_data` describes what it is (adjective_substantive)
+- `import()` describes what the function does (verb)
+- one klick / one shortcut restores current state from raw data
+
+## Potential problems
+
+- generic function names overwrites existing ones
+
+## Solution
+
+- avoid name conflicts with prefix, eg `fl_import()` or be polite: `please_import()`
+
+
+---
+
+## functions.R
+
+```{r, eval = FALSE}
+please_import <- function() {
+  read.csv("data/raw-data.csv", sep = "\t")
+}
+```
+
+shortened `return(rd)`, the last evaluation is always returned
+
+## Journal.Rmd
+
+```{r, eval = FALSE}
+source("functions.R")
+raw_data <- please_import()
+```
+
+Import: $\checkmark$ ?
+
+---
+
+# Tidy
+
+## What is tidy data?
+
+- meet semantics of your data
+- one observation per row
+- one column per variable
+
+## raw_data
+
+- data does not have Participant ID (only implicit by row number)
+
+## I want:
+
+- Column "Participant"
+- PID1 … PID29544
+
+---
+
+
+## functions.R
+
+```{r}
+# …
+please_add_participant_id <- function(data_in) {
+  data_out <- data_in
+  for (i in 1:nrow(data_out)) {
+    data_out[i, "Participant"] <- paste0("PID", i)
+  }
+  return(data_out)
+}
+# …
+```
+
+## Journal.R
+
+```{r, message = FALSE}
+source("functions.R")
+raw_data <- please_import()
+temp_data <- please_add_participant_id(raw_data)
+```
+
+
+---
+
+# Recap
+
+## Good
+
+- writing functions for each step
+    - reduces complexity 
+- sensible names for variable and functions
+    - saves writing verbose documentation
+    - keeps it simple
+    - "code as prose"
+
+---
+
+# Recap
+
+## Bad?
+
+- lots of different syntax
+    - `read.csv` requires argument `sep=` for TSV files
+    - `for` loop feels wrong
+    - is `data[column, row]`, `data[row, column]` or `data$row[column]` correct?
+    - wasn't there a function for renaming columns?
+    - where is the documentation about data manipulation when I need it?
+- slow
+    - `please_add_participant_id()` already takes a second, just to add 30000 strings
+    - how about more complex manipulation?
+    - how about different aggregation level?
+- Why haven't I mentioned tidyverse yet?
+
+
+---
+
+# Import, the tidyverse way
+
+## Library `haven` [^5]
+
+- for SASS, SPSS, Stata
+
+## Library `readxl` [^6]
+
+- for Excel files
+
+## Library `readr` [^7]
+
+- for *rectangular* data
+- eg. csv, tsv, fixed width files, log files...
+- faster than base R
+- string stays string (not factor)
+
+  [^5]: http://haven.tidyverse.org/
+  [^6]: http://readxl.tidyverse.org/
+  [^7]: http://readr.tidyverse.org/
+
+---
+
+## `readr`
+
+- `read_csv()` can read files, URLs, text
+    - columns separated by ","
+    - sensible defaults for files from Excel, OpenSesame etc...
+- `read_tsv()` reads files, URLs, text
+    - columns separated by "\t"
+- `read_delim()` …
+    - `delim = ","` for CSV files (less default settings)
+    - `delim = "\t"` for TSV files
+    - any other separator
+- in all cases
+    - configuration of `NA`, `col_types`, `col_names`… 
+
+---
+
+## functions.R
+
+Change
+
+```{r}
+please_import <- function() {
+  read.csv("data/raw-data.csv", sep = "\t")
+}
+```
+
+to
+
+```{r}
+please_import <- function() {
+  library(readr)
+  read_tsv("data/raw-data.csv")
+}
+```
+
+Import: $\checkmark$ (using tidyverse)
+
+---
+
+## `dplyr` & `tidyr`
+
+- mighty data manipulations tools
+- data manipulation cheatsheet!
+
+![Your new best friend](img/download-cheatsheet.png)
+
+---
+
+## `%>%` - the pipe [^8]
+
+- `data %>% do_something()` is the same as `do_something(data)`
+- better readability, with "verbs"
+    - `data %>% sqrt() %>% add(5) %>% arrange()`
+    - `arrange(add(sqrt(data), 5))`
+- implicitely last verb always `print()` unless data is assigned
+    - `data %>% sqrt()` is the same as \
+    `data %>% sqrt() %>% print()`
+    - `df %>% filter(Age > 25) %>% select(Name) -> drink` \
+    doesn't print anything
+    - `df %>% filter(Age > 25) %>% select(Name)` \
+    prints something
+
+
+  [^8]: https://github.com/tidyverse/magrittr
+
+
+---
+
+## `filter()` - filter for an observation
+
+```{r, echo = TRUE}
+
+temp_data %>% filter(Participant == "PID17")
+```
+
+
+---
+
+## `select()` - select a column
+
+```{r}
+temp_data %>% 
+  filter(Participant == "PID17") %>% 
+  select(Participant, country) -> p17country
+print(p17country)
+```
+
+---
+
+## `mutate()` - add a column
+
+```{r}
+temp_data %>% 
+  mutate(mean_Q = (Q1 + Q4) / 2) %>%
+  filter(Participant == "PID17") %>% 
+  select(Participant, country, Q1, Q4, mean_Q)
+```
+
+---
+
+## `n()` - number of values
+
+Helper functions inside `mutate()` and `summarise()`
+
+```{r}
+temp_data %>%
+  summarise(
+    meanQ1 = mean(Q1), 
+    meanQ2 = mean(Q2), 
+    elements = n())
+```
+
+
+---
+
+## functions.R
+
+Change
+
+```{r}
+please_add_participant_id <- function(data_in) {
+  data_out <- data_in
+  for (i in 1:nrow(data_out)) {
+    data_out[i, "Participant"] <- paste0("PID", i)
+  }
+  return(data_out)
+}
+```
+
+to
+
+```{r, warning = FALSE}
+please_add_participant_id <- function(data_in) {
+  data_in %>% 
+    mutate(Participant = paste0("PID", 1:n()))
+}
+```
+
+---
+
+## recap
+
+```{r, echo = FALSE}
+library(microbenchmark)
+
+add_id_base <- function(data_in) {
+  data_out <- data_in
+  for (i in 1:nrow(data_out)) {
+    data_out[i, "Participant"] <- paste0("PID", i)
+  }
+  return(data_out)
+}
+
+add_id_tidy <- function(data_in) {
+  data_in %>% 
+    mutate(Participant = paste0("PID", 1:n()))
+}
+
+#microbenchmark(
+#  add_id_base(raw_data),
+#  add_id_tidy(raw_data),
+#  times = 5L
+#)
+```
+
+- tidyverse much faster
+    - old version: 6.2 seconds for 30000 observations
+    - new version: 0.015 seconds for 30000 observations
+- easy to read
+- Ceci n'est pas un pipe
+- next step: tidy data
+
+```{r}
+temp_data <- please_import() %>%
+  please_add_participant_id()
+```
+
+---
+## functions.R
+
+```{r, eval = FALSE}
+please_import <- function() {
+  read_tsv("data/raw-data.csv")
+}
+please_add_participant_id <- function(data_in) {
+  data_in %>% 
+    mutate(Participant = paste0("PID", 1:n()))
+}
+```
+
+## Journal.Rmd
+```{r, eval = FALSE}
+library(tidyverse)
+source("functions.R")
+temp_data <- please_import() %>%
+  please_add_participant_id()
+```
+
+
+---
+# tidy
+
+## goal
+
+- one column per variable
+- one observation per row
+- represent semantic structure of the data
+
+## observation
+
+- Q1…Q20 are answers to different questions, E1…E20 the according reaction times
+- each question is one observation
+- country, introelapse etc are observations per participant
+
+## solution
+
+- 2 aggregation levels: Participant data, Question data
+
+---
+
+## functions.R
+
+```{r}
+please_extract_participant_data <-
+  function(data_in){
+    data_in %>% 
+      select( -starts_with("Q")) %>% 
+      select( -starts_with("E")) %>% 
+      select(Participant, everything())
+  }
+```
+
+## Journal.Rmd
+
+```{r}
+participant_data <- temp_data %>% 
+  please_extract_participant_data()
+```
+
+---
+
+```{r, fig.width = 5, fig.height = 3}
+ggplot(participant_data) +
+  geom_point(aes(introelapse, wrapupelapse)) +
+  coord_cartesian(
+    xlim = c(0, 1000), 
+    ylim = c(0, 1000))
+```
+
+---
+
+## functions.R
+
+
+```{r}
+please_extract_questions_data <-
+  function(data_in){
+    data_in %>% 
+      select(Participant, 
+             starts_with("Q"), 
+             starts_with("E")) 
+  }
+```
+
+---
+
+## functions.R
+
+```{r}
+please_tidy_question_data <-
+  function(data_in){
+    
+    data_in <- temp_data %>% please_extract_questions_data()
+    xx <- data_in %>%
+      gather(variable, value, -Participant) %>% 
+      mutate(
+        question = parse_number(variable), 
+        variable = substr(variable, 1, 1)) %>% 
+      spread(variable, value) %>%
+      rename(Answer = Q, Reaction_time = E)
+  }
+```
+
+## Journal.Rmd
+
+```{r}
+tidy_questions <-
+  temp_data %>%
+  please_extract_questions_data() %>%
+  please_tidy_question_data()
+```
+
+---
+
+
+```{r}
+ggplot(tidy_questions ) +
+  geom_boxplot(aes(factor(question), Reaction_time)) +
+  labs(x = "Question", y = "Response time") +
+  coord_cartesian(ylim = c(0, 15000))
+```
+
+
+---
+
+## Putting things back together
+
+```{r, eval = FALSE}
+combined_data_on_participant_level <-
+  full_join(
+    participant_data,
+    tidy_questions, 
+    by = "Participant"
+  )
+print(combined_data)  
+```
+---
+
+
+```{r}
+combined_data_on_participant_level <-
+  tidy_questions %>%
+    group_by(Participant) %>%
+    summarise(
+      mean_answer = mean(Answer), 
+      mean_reaction_time = mean(Reaction_time)) %>%
+    left_join( participant_data , by = "Participant")
+```
+
+---
+
+# Recap
+
+![Workflow for data exploration](img/data-science-explore.png)
+
+- import, tidy, transform, visualise
+- separate different levels of concern
+- 

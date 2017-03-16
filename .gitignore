@@ -10,6 +10,7 @@ examples/IS2016_paper_kit/LaTeX/FinalMD_files/*
 .DS_Store
 
 doc/*pdf
+*nb.html
 
 *bbl
 *aux

@@ -1,0 +1,50 @@
+---
+title: "Journal of my OHBDS Project"
+output: html_notebook
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(
+  echo = FALSE, 
+  warning = FALSE,
+  message = FALSE,
+  dev = "pdf", 
+  width = 40, 
+  breaklines = TRUE, 
+  tidy.opts = list(width.cutoff = 40))
+
+options(tibble.print_min = 2L, tibble.print_max = 4L, tibble.width = 50L) 
+```
+
+
+# Introduction
+
+These are additional files for the workshop on data workflow.
+
+## Document setup
+
+I need to load my functions
+
+```{r}
+source("functions.R")
+```
+
+
+## Data
+
+The example data is in the `./data/` directory and already in a CSV file.
+
+# Import
+
+```{r}
+raw_data <- import()
+```
+
+This creates a strange data set with just one column... It turns out, the file isn't really a CSV, but rather a TSV. I wrote another function that imports a TSV file:
+
+```{r, message=FALSE}
+raw_data <- please_import()
+```
+
+
