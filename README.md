@@ -18,7 +18,7 @@ The presentation was given by [Frank Loesche](https://www.cognovo.eu/frank-loesc
 
 ## Data Workflow – The restaurant at the end of the tidyverse 
 
-In this presentation [Frank Loesche](https://www.cognovo.eu/frank-loesche) highlights some best practices regarding the workflow in an exploratory data analysis. These best practices are implemented and heavily rely on [tidyverse](http://tidyverse.org) packages.
+In this presentation [Frank Loesche](https://www.cognovo.eu/frank-loesche) highlights some best practices regarding the workflow in an exploratory data analysis. These best practices are implemented and heavily rely on [tidyverse](http://tidyverse.org) packages. This introduction was given on 16/03/2017 as part of [CogNovo's WHAT's UP](https://CogNovo.eu/whats-up)
 
 ### Presentation
 
