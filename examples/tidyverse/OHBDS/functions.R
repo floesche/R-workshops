@@ -23,6 +23,19 @@ please_import <- function(){
   return(data.out)
 }
 
+please_add_participant_id_with_loop <- function(data_in) {
+  data_out <- data_in
+  for (i in 1:nrow(data_out)) {
+    data_out[i, "Participant"] <- paste0("PID", i)
+  }
+  return(data_out)
+}
+
+please_add_participant_id <- function(data_in) {
+  data_in %>% 
+    mutate(Participant = paste0("PID", 1:n()))
+}
+
 please_extract_participant_data <-
   function(data_in){
     data_in %>% 

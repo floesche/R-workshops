@@ -37,14 +37,81 @@ The example data is in the `./data/` directory and already in a CSV file.
 
 # Import
 
-```{r}
-raw_data <- import()
-```
-
-This creates a strange data set with just one column... It turns out, the file isn't really a CSV, but rather a TSV. I wrote another function that imports a TSV file:
+It turns out, the file isn't really a CSV, but rather a TSV. I wrote a function that imports a TSV file:
 
 ```{r, message=FALSE}
 raw_data <- please_import()
+```
+
+# first attempt to add Participant ID
+
+```{r}
+source("functions.R")
+raw_data <- please_import()
+temp_data <- please_add_participant_id_with_loop(raw_data)
+```
+
+
+## Participant 17
+
+Show all data for participant 17
+
+```{r}
+temp_data %>% filter(Participant == "PID17")
+```
+
+Find out the country of that participant
+
+```{r}
+temp_data %>% 
+  filter(Participant == "PID17") %>% 
+  select(Participant, country) -> p17country
+print(p17country)
+```
+
+Add one columnn for all particpants, show results for Participants 17 and 23.
+
+```{r}
+temp_data %>% 
+  mutate(mean_Q = (Q1 + Q4) / 2) %>%
+  filter(Participant == "PID17" | Participant == "PID23") %>% 
+  select(Participant, country, Q1, Q4, mean_Q)
+```
+
+
+```{r}
+temp_data %>%
+  summarise(
+    mean_Q1 = mean(Q1),
+    meanQ2 = mean(Q2), 
+    elements = n()
+  )
+```
+
+# Compare looping with tidyverse
+
+The following code compares 5 executions of the function adding the "Participant" column to the dataset with loops to the one using tidyverse. Depending on the computer, the tidyverse should be between 100 and 500 times faster.
+
+
+```{r}
+library(microbenchmark)
+
+microbenchmark(
+  please_add_participant_id_with_loop(raw_data),
+  please_add_participant_id(raw_data),
+  times = 5L
+)
+```
+
+
+# Create tidy dataset
+
+
+```{r}
+tidy_questions <-
+  temp_data %>%
+  please_extract_questions_data() %>%
+  please_tidy_question_data()
 ```
 
 

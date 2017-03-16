@@ -47,8 +47,7 @@ I was asked for *life-saving tips to make your life easier when using the comput
 
 - consistent workflow from raw data to publication
 
-
-
+---
 
 # Framework
 
@@ -61,7 +60,7 @@ I was asked for *life-saving tips to make your life easier when using the comput
 1. consider everything not saved in a file as lost
 1. single source of truth (only one copy of data files)
 
-
+---
 
 # tidyverse
 
@@ -79,7 +78,7 @@ Basic Idea: **what** %>% **how** -> **result**
 
   [^2]: from http://tidyverse.org
 
-
+---
 
 # Workflow
 
@@ -87,6 +86,8 @@ Basic Idea: **what** %>% **how** -> **result**
 ![Workflow for data exploration [^1]](img/data-science-explore.png)
 
   [^1]: from *R for Data Science*, http://r4ds.had.co.nz
+
+---
 
 # Import
 
@@ -102,6 +103,7 @@ Basic Idea: **what** %>% **how** -> **result**
 
 - data might update at any time during the data exploration
 
+---
 
 # Import
 
@@ -119,6 +121,7 @@ Basic Idea: **what** %>% **how** -> **result**
 - Excel (readxl)
 - data bases, SQL
 
+---
 
 # Import
 
@@ -127,25 +130,26 @@ Basic Idea: **what** %>% **how** -> **result**
 At the beginning:
 
 ```
-~frank/data-analysis/
-                    /data/raw-data.csv
-                    /Journal.Rmd
-                    /functions.R
+~frank/OHBDS/
+            /data/raw-data.csv
+            /Journal.Rmd
+            /functions.R
 ```
 
 - `data/*`: input
-- `Journal.Rmd`: document for everything
-- `functions.R`: functional units
+- [`Journal.Rmd`](../examples/tidyverse/OHBDS/Journal.Rmd): human centric document, also see [previous workshop](MarkUpsAndDowns.pdf)
+- [`functions.R`](../examples/tidyverse/OHBDS/functions.R): functional units, code centric
 
 ---
+#Import
 
 ## Raw Data
 
 Open Hemispheric Brain Dominance Scale [^3]
 
 - 20 scale items + reaction times
-- `codebook.txt` describes content
-- have a look at the data:
+- [`codebook.txt`](../examples/tidyverse/OHBDS/data/codebook.txt) describes content
+- [have a look at the data](../examples/tidyverse/OHBDS/data/raw-data.csv):
 
 ```
 1|Q1  Q2  Q3  Q4…E1  E2  E3…others
@@ -158,49 +162,62 @@ Open Hemispheric Brain Dominance Scale [^3]
   [^3]: data source: http://personality-testing.info/_rawdata/
 
 ---
+# Import
 
 ## Load data
 
-Import CSV the usual way:
+Import CSV as most people know it [^11]
 
 ```{r}
 data <- read.csv("data/raw-data.csv")
+# Sanity check 1, should show ~30000 rows
 nrow(data)
 ```
 
-(speak): **Yay!**
+**Yay!**
 
+
+  [^11]: the next few slides are illustrating how work with data in a base R environment. Continue reading at "Import - the tidyverse way" if you don't need a refresher.
+  
+  
 ---
+# Sanity Check
 
 ## Basic information
 
 ```{r}
+# Sanity check 2, should show about 45 columns
 str(data)
 ```
 
-(speak): **not good**
+**not good**: only 1 variable
 
 ```{r}
+# delete data
 rm(data)
 ```
 
 
 ---
+# Debug
 
-## Back to data: 
+## Where did it go wrong?
+
+- revisit data
 
 ```
 1|Q1  Q2  Q3  Q4…E1  E2  E3…others
-2|4	1	5	1	4	2	5…
+2|4	1	5	1	4	2	5… 5423  2313…
 ```
 
-### Observation
+## Result
 
 - has no comma, as in Comma Separated Values (CSV)
 - has "tabs" as in Tab Separated Values (TSV)
 
 
 ---
+# Import
 
 ## Load data, again
 
@@ -218,11 +235,14 @@ str(raw_data, list.len = 1)
   [^4]: http://style.tidyverse.org
 
 ---
+# Refactor code
 
-## Draft to Section
+
+- working snippet of code into functions
+- move `import()` to `functions.R`
 
 
-```{r}
+```{r, eval = FALSE}
 import <- function() {
   data <- read.csv("data/raw-data.csv", sep = "\t")
   return(data)
@@ -230,7 +250,7 @@ import <- function() {
 raw_data <- import()
 ```
 
-- move `import()` to `functions.R`
+
 
 ## Journal.Rmd
 
@@ -241,25 +261,29 @@ raw_data <- import()
 
 ---
 
+# Conclusion
+
 `raw_data <- import()`
 
 
 ## Good
 
-- `raw_data` describes what it is (adjective_substantive)
-- `import()` describes what the function does (verb)
-- one klick / one shortcut restores current state from raw data
+- `raw_data` describes what is in the data
+- `import()` describes what the function does
+- only one run of `Journal.Rmd` to restore current R environment
 
 ## Potential problems
 
-- generic function names overwrites existing ones
+- generic function names (e.g `import()`, `arrange()`, `filter()`) overwrites existing ones
 
 ## Solution
 
-- avoid name conflicts with prefix, eg `fl_import()` or be polite: `please_import()`
+- avoid name conflicts with prefix, eg `fl_import()`
+- or be polite: `please_import()` :-)
 
 
 ---
+# Import
 
 ## functions.R
 
@@ -278,29 +302,28 @@ source("functions.R")
 raw_data <- please_import()
 ```
 
-Import: $\checkmark$ ?
+Import: $\checkmark$ (good enough for now)
 
 ---
 
-# Tidy
+# Tidy - the 2nd step in data analysis
 
 ## What is tidy data?
 
-- meet semantics of your data
+- meet semantics of your data (aggregation level)
 - one observation per row
 - one column per variable
 
-## raw_data
+## example `raw_data`
 
-- data does not have Participant ID (only implicit by row number)
+- does not have Participant ID, depends on current order
 
-## I want:
+## Aim
 
-- Column "Participant"
-- PID1 … PID29544
+- additional Column "Participant" with "PID1" … "PID29544"
 
 ---
-
+# Tidy - development
 
 ## functions.R
 
@@ -318,7 +341,7 @@ please_add_participant_id <- function(data_in) {
 
 ## Journal.R
 
-```{r, message = FALSE}
+```{r}
 source("functions.R")
 raw_data <- please_import()
 temp_data <- please_add_participant_id(raw_data)
@@ -329,13 +352,16 @@ temp_data <- please_add_participant_id(raw_data)
 
 # Recap
 
+- data imported into `raw_data`
+- `temp_data` has additional column "Participant" with unique IDs
+
 ## Good
 
 - writing functions for each step
-    - reduces complexity 
+    - reduces complexity
+    - separation of concerns (coding details in `functions.R`, statistical data analysis in `Journal.Rmd`)
 - sensible names for variable and functions
     - saves writing verbose documentation
-    - keeps it simple
     - "code as prose"
 
 ---
@@ -346,12 +372,12 @@ temp_data <- please_add_participant_id(raw_data)
 
 - lots of different syntax
     - `read.csv` requires argument `sep=` for TSV files
-    - `for` loop feels wrong
+    - `for` loop *feels* wrong
     - is `data[column, row]`, `data[row, column]` or `data$row[column]` correct?
     - wasn't there a function for renaming columns?
     - where is the documentation about data manipulation when I need it?
 - slow
-    - `please_add_participant_id()` already takes a second, just to add 30000 strings
+    - `please_add_participant_id()` already takes 6 seconds, just to add 30000 strings
     - how about more complex manipulation?
     - how about different aggregation level?
 - Why haven't I mentioned tidyverse yet?
@@ -359,30 +385,30 @@ temp_data <- please_add_participant_id(raw_data)
 
 ---
 
-# Import, the tidyverse way
+# Import the tidyverse way
 
-## Library `haven` [^5]
+- many different libraries
+- syntax very similar
+- learn once, apply often
 
-- for SASS, SPSS, Stata
+## Different Libraries:
 
-## Library `readxl` [^6]
-
-- for Excel files
-
-## Library `readr` [^7]
-
-- for *rectangular* data
-- eg. csv, tsv, fixed width files, log files...
-- faster than base R
-- string stays string (not factor)
+- `haven` [^5]
+    - for SASS, SPSS, Stata
+- `readxl` [^6]
+    - for Excel files
+- `readr` [^7]
+    - for *rectangular* data, eg. csv, tsv, fixed width files…
+    - string stays string (not factor)
 
   [^5]: http://haven.tidyverse.org/
   [^6]: http://readxl.tidyverse.org/
   [^7]: http://readr.tidyverse.org/
 
 ---
+# Import
 
-## `readr`
+## `readr` - library for TSV example
 
 - `read_csv()` can read files, URLs, text
     - columns separated by ","
@@ -397,12 +423,11 @@ temp_data <- please_add_participant_id(raw_data)
     - configuration of `NA`, `col_types`, `col_names`… 
 
 ---
+# Import - example
 
 ## functions.R
 
-Change
-
-```{r}
+```{r, eval = FALSE}
 please_import <- function() {
   read.csv("data/raw-data.csv", sep = "\t")
 }
@@ -421,16 +446,18 @@ Import: $\checkmark$ (using tidyverse)
 
 ---
 
-## `dplyr` & `tidyr`
+# Tidy
 
-- mighty data manipulations tools
-- data manipulation cheatsheet!
+## `dplyr` & `tidyr` – data manipulation
+
+- good documentation in data wrangling cheatsheet!
+- some example functions to follow
 
 ![Your new best friend](img/download-cheatsheet.png)
 
 ---
 
-## `%>%` - the pipe [^8]
+## `%>%` - pass data between functions through the pipe [^8]
 
 - `data %>% do_something()` is the same as `do_something(data)`
 - better readability, with "verbs"
@@ -471,7 +498,7 @@ print(p17country)
 
 ---
 
-## `mutate()` - add a column
+## `mutate()` - add columns
 
 ```{r}
 temp_data %>% 
@@ -482,26 +509,27 @@ temp_data %>%
 
 ---
 
-## `n()` - number of values
+## `summarise()` – aggregate
 
-Helper functions inside `mutate()` and `summarise()`
+- summarise (eg. 30000 observations) into one observation
 
 ```{r}
 temp_data %>%
   summarise(
-    meanQ1 = mean(Q1), 
+    mean_Q1 = mean(Q1),
     meanQ2 = mean(Q2), 
-    elements = n())
+    elements = n()
+  )
 ```
 
 
 ---
 
+# Better additional column
+
 ## functions.R
 
-Change
-
-```{r}
+```{r, eval = FALSE}
 please_add_participant_id <- function(data_in) {
   data_out <- data_in
   for (i in 1:nrow(data_out)) {
@@ -522,33 +550,10 @@ please_add_participant_id <- function(data_in) {
 
 ---
 
-## recap
-
-```{r, echo = FALSE}
-library(microbenchmark)
-
-add_id_base <- function(data_in) {
-  data_out <- data_in
-  for (i in 1:nrow(data_out)) {
-    data_out[i, "Participant"] <- paste0("PID", i)
-  }
-  return(data_out)
-}
-
-add_id_tidy <- function(data_in) {
-  data_in %>% 
-    mutate(Participant = paste0("PID", 1:n()))
-}
-
-#microbenchmark(
-#  add_id_base(raw_data),
-#  add_id_tidy(raw_data),
-#  times = 5L
-#)
-```
+# recap
 
 - tidyverse much faster
-    - old version: 6.2 seconds for 30000 observations
+    - old version: 5     seconds for 30000 observations
     - new version: 0.015 seconds for 30000 observations
 - easy to read
 - Ceci n'est pas un pipe
@@ -560,6 +565,9 @@ temp_data <- please_import() %>%
 ```
 
 ---
+
+# Current status
+
 ## functions.R
 
 ```{r, eval = FALSE}
@@ -582,9 +590,10 @@ temp_data <- please_import() %>%
 
 
 ---
+
 # tidy
 
-## goal
+## goal (reminder: what is *tidy* data)
 
 - one column per variable
 - one observation per row
@@ -593,14 +602,16 @@ temp_data <- please_import() %>%
 ## observation
 
 - Q1…Q20 are answers to different questions, E1…E20 the according reaction times
-- each question is one observation
+- each question is one observation (answer, response time)
 - country, introelapse etc are observations per participant
 
-## solution
+## Suggestion
 
 - 2 aggregation levels: Participant data, Question data
 
 ---
+
+# tidy participant data
 
 ## functions.R
 
@@ -633,6 +644,8 @@ ggplot(participant_data) +
 
 ---
 
+# tidy question data (extract)
+
 ## functions.R
 
 
@@ -648,14 +661,14 @@ please_extract_questions_data <-
 
 ---
 
+# tidy question data (wide to long)
+
 ## functions.R
 
 ```{r}
 please_tidy_question_data <-
   function(data_in){
-    
-    data_in <- temp_data %>% please_extract_questions_data()
-    xx <- data_in %>%
+    data_in %>%
       gather(variable, value, -Participant) %>% 
       mutate(
         question = parse_number(variable), 
@@ -665,16 +678,24 @@ please_tidy_question_data <-
   }
 ```
 
+---
+
+# Documentation
+
 ## Journal.Rmd
+
+The only thing that needs to go in the Journal is a collection of functions whose names describe what is happening with the data. The details of implementation is *hidden* inside `functions.R`
 
 ```{r}
 tidy_questions <-
-  temp_data %>%
+  please_import() %>%
+  please_add_participant_id() %>%
   please_extract_questions_data() %>%
   please_tidy_question_data()
 ```
 
 ---
+
 
 
 ```{r}
@@ -687,10 +708,10 @@ ggplot(tidy_questions ) +
 
 ---
 
-## Putting things back together
+# between aggregation levels
 
 ```{r, eval = FALSE}
-combined_data_on_participant_level <-
+combined_data_on_question_level <-
   full_join(
     participant_data,
     tidy_questions, 
@@ -698,8 +719,10 @@ combined_data_on_participant_level <-
   )
 print(combined_data)  
 ```
+
 ---
 
+# between aggregation level
 
 ```{r}
 combined_data_on_participant_level <-
@@ -711,12 +734,37 @@ combined_data_on_participant_level <-
     left_join( participant_data , by = "Participant")
 ```
 
+
+---
+
+This slide is intentionally left blank for your data manipulation and plots :-)
+
 ---
 
 # Recap
 
 ![Workflow for data exploration](img/data-science-explore.png)
 
-- import, tidy, transform, visualise
-- separate different levels of concern
-- 
+- this document shows: import, tidy, (transform, visualise)
+- programming style: separate levels of concern (code vs analysis)
+
+---
+
+# Thanks
+
+More examples at http://github.com/floesche/R-workshops
+
+Also have a look at the previous workshop \
+["Raw Text to Camera-Ready"](https://github.com/floesche/R-workshops/raw/master/doc/MarkUpsAndDowns.pdf)
+
+Sorry, there was no restaurant. But you should be able to understand this much better now:
+
+```{r, eval = FALSE}
+df %>% 
+  filter(Age > 25) %>% 
+  select(Name) -> drink
+```
+
+
+
+
