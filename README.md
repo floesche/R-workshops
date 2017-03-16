@@ -1,21 +1,36 @@
-# Mark Ups and Downs
+# Tutorials
+
+This repository contains all the files used to create a presentations on Markdown / Rmarkdown as well as an introduction to data manipulation with tidyverse.
+
+You can download everything [in a zip file](https://github.com/floesche/R-workshops/archive/master.zip), or clone this repository.
+
+## Mark Ups and Downs
 
 This repository contains all the files used to create a presentation on using Markdown for writing academic papers, and on some steps that it is possible to take to go from "raw" Markdown texts to final, camera-ready paper ready for submission to a journal or conference. By  utilising the *literate programming* approach and applying it to the field of Cognitive Science and particularly Psychology, this workshop provides a solution on how to generate reproducible research and academic writing.
 
 The presentation was given by [Frank Loesche](https://www.cognovo.eu/frank-loesche) and [Ilaria Torre](https://cognovo.eu/ilaria-torre), on 08/02/2017, at a *Coding Lunch* session in the [School of Psychology](https://www.plymouth.ac.uk/schools/psychology/) of Plymouth University. They are both part of the [CogNovo Research Group](https://CogNovo.eu) there.
 
-You can download everything [in a zip file](https://github.com/floesche/R-workshops/archive/master.zip), or clone this repository.
-
-## Presentation
+### Presentation
 
 - Out talk is in [doc/MarkUpsAndDowns.pdf](doc/MarkUpsAndDowns.pdf)
     - (source code at [doc/MarkUpsAndDowns.Rmd](doc/MarkUpsAndDowns.Rmd))
 
-## Directory structure
+
+## Data Workflow – The restaurant at the end of the tidyverse 
+
+In this presentation [Frank Loesche](https://www.cognovo.eu/frank-loesche) highlights some best practices regarding the workflow in an exploratory data analysis. These best practices are implemented and heavily rely on [tidyverse](http://tidyverse.org) packages.
+
+### Presentation
+
+- The talk is in [doc/DataWorkflow.pdf](doc/DataWorkflow.pdf)
+    - (source code at [doc/DataWorkflow.Rmd](doc/DataWorkflow.Rmd))
+
+
+# Directory structure
 
 - [doc](doc/) contains all documentation, for example the presentation
 - [examples](examples/) has some of the example files mentioned in the presentation
-
+    - [examples/tidyverse](examples/tidyverse) contains some supplementary files for the Data Workflow tutorial
 
 ## Useful documentation
 
@@ -38,6 +53,7 @@ You can download everything [in a zip file](https://github.com/floesche/R-worksh
 - [Pandoc manual (also Markdown syntax)](http://pandoc.org/MANUAL.html)
 - [RMarkdown documentation](http://rmarkdown.rstudio.com/lesson-1.html)
 - [RMarkdown reference](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
+- [tidyverse](http://tidyverse.org)
 
 - [knitr options](https://yihui.name/knitr/options/)
 - [book about dynamic documents (knitr and Sweave)](https://github.com/yihui/knitr-book)
