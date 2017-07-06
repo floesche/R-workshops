@@ -20,6 +20,8 @@ The presentation was given by [Frank Loesche](https://www.cognovo.eu/frank-loesc
 
 In this presentation [Frank Loesche](https://www.cognovo.eu/frank-loesche) highlights some best practices regarding the workflow in an exploratory data analysis. These best practices are implemented and heavily rely on [tidyverse](http://tidyverse.org) packages. This introduction was given on 16/03/2017 as part of [CogNovo's WHAT's UP](https://CogNovo.eu/whats-up)
 
+The workshop has the same underlying principle as David Robinson makes in his article [Teach the tidyverse to beginners](http://varianceexplained.org/r/teach-tidyverse/): tidyverse is an alternative to base-R in teaching data manipulation and allows a very concise method of documenting the changes in data throught code.
+
 ### Presentation
 
 - The talk is in [doc/DataWorkflow.pdf](doc/DataWorkflow.pdf)
@@ -73,6 +75,7 @@ In this presentation [Frank Loesche](https://www.cognovo.eu/frank-loesche) highl
 - [Literate Programming (original article)](https://doi.org/10.1093/comjnl/27.2.97)
 - [Argument to create reproducible research](https://www.washingtonpost.com/news/speaking-of-science/wp/2015/08/28/no-sciences-reproducibility-problem-is-not-limited-to-psychology/)
 - [Replication Crisis](https://en.wikipedia.org/wiki/Replication_crisis)
+- [Teach the tidyverse to beginners](http://varianceexplained.org/r/teach-tidyverse/)
 
 - [Other approach to writing Articles (rticles)](https://github.com/rstudio/rticles)
 
