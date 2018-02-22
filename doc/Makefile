@@ -1,6 +1,6 @@
 .PHONY = all rebuild clean cleantmp cleanout
 
-all : MarkUpsAndDowns.pdf
+all : MarkUpsAndDowns.pdf TidyCooking.pdf DataWorkflow.pdf
 
 rebuild : clean all
 
@@ -14,4 +14,4 @@ cleanout :
 
 %.pdf : %.Rmd
 	Rscript -e 'library(knitr); knit("$<", quiet=TRUE, output="$(basename $<).md");'
-	pandoc -t beamer "$(basename $<).md" -o "$@"
+	pandoc -t beamer -H resources/preamble.tex "$(basename $<).md" -o "$@"
