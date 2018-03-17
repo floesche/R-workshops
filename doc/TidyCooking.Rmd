@@ -114,7 +114,7 @@ task_one <-
 ### Suggestion 
 
 * make `library(tidyverse)` a habit
-* use tidyverse to describe you analysis
+* use tidyverse to describe your analysis
   * don't think of it as ``programming''
   * think in sentences: ``From dataset df filter the rows where task is equal to 1 and store the result in task_one''
 
